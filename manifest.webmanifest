@@ -1,6 +1,6 @@
 {
   "name": "ぼたん セルフ会計",
-  "short_name": "ぼたん会計",
+  "short_name": "セルフ会計",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f5efe4",
