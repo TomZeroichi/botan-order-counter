@@ -174,7 +174,7 @@ var MENU=[
 var CATS=["すべて","★お気に入り","本日の特選","焼肉","タン","ホルモン","おつまみ","サラダ・野菜","〆・デザート","ビール","ハイボール","サワー","焼酎・日本酒","カクテル・ワイン","ソフトドリンク"];
 var KEY="botan_order_counter_v1_1";
 var def={
-sessionStart:null,adultCount:1,childCount:0,
+schemaVersion:16,sessionStart:null,adultCount:1,childCount:0,
 adultBaseNet:599,otoshiNet:300,childBaseNet:250,
 adultExtNet:399,childExtNet:150,extCount:0,minutes:60,includeBase:true,
 taxRate:10,taxRounding:"floor",
@@ -191,6 +191,7 @@ function load(){
   var x=JSON.parse(localStorage.getItem(KEY)||"null");
   if(!x)return clone(def);
   var n=Object.assign(clone(def),x);
+  if(!x.schemaVersion||x.schemaVersion<16){n.taxRounding="floor";n.schemaVersion=16;}
   if(typeof x.adultCount!=="number"&&typeof x.partySize==="number")n.adultCount=x.partySize;
   if(typeof x.adultBaseNet!=="number"&&typeof x.adultBase==="number")n.adultBaseNet=guessNet(x.adultBase);
   if(typeof x.otoshiNet!=="number"&&typeof x.otoshi==="number")n.otoshiNet=guessNet(x.otoshi);
