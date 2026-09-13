@@ -7,18 +7,19 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ぼたん会計">
-<title>ぼたん 注文・会計カウンター V1.6</title>
+<title>ぼたん セルフ会計 V1.7</title>
 <link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#f5efe4;--panel:#fffaf0;--ink:#1f1a16;--muted:#786e65;--line:#ded2c2;--red:#a51f18;--dark:#171310;--green:#26734a;--shadow:0 8px 28px rgba(44,28,18,.1)}
+:root{--bg:#f4efe7;--panel:#fffdf8;--ink:#17120f;--muted:#766a60;--line:#dfd2c3;--red:#8f1f19;--red2:#b72b21;--dark:#16110e;--dark2:#241a15;--gold:#d6aa4a;--green:#26734a;--shadow:0 10px 30px rgba(44,28,18,.10)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}button,input,select{font:inherit}button{touch-action:manipulation}body{padding-bottom:92px}.app{max-width:820px;margin:auto;min-height:100vh}
-.hero{position:sticky;top:0;z-index:20;background:#171310;color:#fff;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;box-shadow:0 4px 18px #0003}.heroRow{display:flex;align-items:center;gap:10px}.brand{font-weight:900;font-size:16px}.timerBox{flex:1;display:flex;justify-content:center;gap:14px}.timerPart{text-align:center;min-width:82px}.timerLabel{font-size:11px;opacity:.7}.timerValue{font-size:23px;font-weight:900;font-variant-numeric:tabular-nums}.warn{color:#ffd75f}.danger{color:#ff8178}.gear{width:42px;height:42px;border-radius:12px;border:1px solid #ffffff2e;background:#2b231e;color:#fff;font-size:19px}
-.summary{margin-top:10px;display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:8px}.sum{background:#ffffff14;border-radius:12px;padding:8px 10px}.sum small{opacity:.7}.sum b{display:block;font-size:18px;margin-top:2px}.sum.total b{color:#ffd75f;font-size:21px}
+.hero{position:sticky;top:0;z-index:20;background:linear-gradient(145deg,#120e0c 0%,#241813 62%,#321d16 100%);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;box-shadow:0 4px 18px #0003}.heroRow{display:flex;align-items:center;gap:10px}.brand{font-weight:950;font-size:15px;letter-spacing:.03em;white-space:nowrap}.timerBox{flex:1;display:flex;justify-content:center;gap:14px}.timerPart{text-align:center;min-width:82px}.timerLabel{font-size:11px;opacity:.7}.timerValue{font-size:23px;font-weight:900;font-variant-numeric:tabular-nums}.warn{color:#ffd75f}.danger{color:#ff8178}.gear{width:42px;height:42px;border-radius:12px;border:1px solid #ffffff2e;background:#2b231e;color:#fff;font-size:19px}
+.summary{margin-top:10px;display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:8px}.sum{background:linear-gradient(180deg,#ffffff14,#ffffff0c);border:1px solid #ffffff10;border-radius:14px;padding:9px 11px}.sum small{opacity:.7}.sum b{display:block;font-size:18px;margin-top:2px}.sum.total b{color:#f4c85e;font-size:22px;text-shadow:0 1px 10px #0006}
 .startBar{margin:14px;background:var(--panel);box-shadow:var(--shadow);border-radius:18px;padding:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.startText{min-width:0}.startTitle{font-weight:900;font-size:18px;white-space:nowrap}.startSub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.startActions{display:grid;grid-template-columns:1fr;gap:8px}.primary,.extend{border:0;border-radius:14px;padding:13px 14px;font-weight:900;width:100%}.primary{background:var(--red);color:#fff}.extend{background:#fff7d9;color:#5d4500;border:1px solid #d8b85c}.extend:disabled{opacity:.45}.extendPrice{text-align:center;font-size:11px;color:var(--muted);margin-top:-3px}
 .toolbar{padding:0 14px 10px}.tabs{display:flex;gap:8px;overflow:auto;scrollbar-width:none;padding:2px 0 4px}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 13px;font-weight:800;font-size:13px}.tab.active{background:var(--dark);color:#fff;border-color:var(--dark)}.search{width:100%;margin-top:9px;padding:12px 13px;border:1px solid var(--line);border-radius:13px;background:#fff}
-.sectionTitle{padding:4px 14px 8px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 18px}.menuCard{position:relative;min-width:0}.menu{width:100%;min-height:96px;text-align:left;border:1px solid #dfd3c3;background:#fffdf7;border-radius:16px;padding:12px 42px 12px 12px;box-shadow:0 3px 12px #32140f0f;position:relative}.menu:active{transform:scale(.975)}.menuName{font-weight:900;line-height:1.28}.menuPrice{margin-top:9px;font-weight:900;color:var(--red);font-size:18px}.menuPrice.free{color:var(--green)}.hint{font-size:10px;color:var(--muted);margin-left:4px}.favBtn{position:absolute;z-index:2;right:7px;top:7px;width:32px;height:32px;border:0;border-radius:50%;background:#f1e7d6;color:#9d8f80;font-size:18px;font-weight:900}.favBtn.on{background:#ffe6a6;color:#9a6700}.breakdown{margin:-2px 14px 12px;padding:10px 12px;border-radius:13px;background:#ede5d8;color:#5e534a;font-size:12px;line-height:1.55}.breakdown b{color:#2c241f}.priceSection{margin-top:14px;padding-top:4px}.priceSearch{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff;margin:8px 0}.priceList{display:grid;gap:8px}.priceRow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.priceName{font-weight:900;font-size:13px;margin-bottom:7px}.priceInputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.priceInputs label{font-size:10px;color:var(--muted);font-weight:800}.priceInputs input{margin-top:4px}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 10px;font-weight:800}.couponStatus{font-size:11px;margin-top:5px;color:var(--muted)}
+.sectionTitle{padding:4px 14px 8px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 18px}.menuCard{position:relative;min-width:0}.menu{width:100%;min-height:100px;text-align:left;border:1px solid #e1d4c4;background:linear-gradient(155deg,#fffefb 0%,#fff9ef 100%);border-radius:18px;padding:13px 44px 13px 13px;box-shadow:0 5px 16px rgba(61,35,20,.07);position:relative}.menu:active{transform:scale(.975)}.menuName{font-weight:900;line-height:1.28}.menuPrice{margin-top:9px;font-weight:900;color:var(--red);font-size:18px}.menuPrice.free{color:var(--green)}.hint{font-size:10px;color:var(--muted);margin-left:4px}.favBtn{position:absolute;z-index:2;right:8px;top:8px;width:32px;height:32px;border:1px solid #eadfce;border-radius:50%;background:#f6efe4;color:#a29383;font-size:18px;font-weight:900;box-shadow:0 2px 6px #0000000a}.favBtn.on{background:#f5d77b;color:#7a4e00;border-color:#e8c75f}.breakdown{margin:-2px 14px 12px;padding:10px 12px;border-radius:13px;background:#ede5d8;color:#5e534a;font-size:12px;line-height:1.55}.breakdown b{color:#2c241f}.priceSection{margin-top:14px;padding-top:4px}.priceSearch{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff;margin:8px 0}.priceList{display:grid;gap:8px}.priceRow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.priceName{font-weight:900;font-size:13px;margin-bottom:7px}.priceInputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.priceInputs label{font-size:10px;color:var(--muted);font-weight:800}.priceInputs input{margin-top:4px}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 10px;font-weight:800}.couponStatus{font-size:11px;margin-top:5px;color:var(--muted)}
 .history{padding:10px 14px 22px}.filters{display:flex;gap:8px;margin-bottom:12px}.filter{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;font-weight:800}.filter.active{background:var(--dark);color:#fff}.item{background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px;margin-bottom:9px}.item.served{opacity:.72}.item.cancelled{opacity:.45;text-decoration:line-through}.top{display:flex;gap:8px}.time{font-weight:900;color:var(--red);min-width:48px}.name{font-weight:900;flex:1}.price{font-weight:900}.bottom{display:flex;align-items:center;gap:8px;margin-top:9px}.status{border:0;border-radius:999px;padding:8px 11px;font-weight:900;font-size:12px}.pending{background:#ffe9c7;color:#7b4900}.servedBtn{background:#dff4e7;color:#17613a}.wait{font-size:12px;color:var(--muted);flex:1}.cancel{border:0;background:transparent;color:#8a817a;font-size:12px}
-.bottomNav{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:0;width:min(820px,100%);background:#171310f7;padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav{border:0;border-radius:13px;background:#2c241f;color:#cfc4ba;font-weight:900;padding:12px}.nav.active{background:#fff1cf;color:#211a15}.badge{display:inline-block;background:var(--red);color:#fff;border-radius:999px;min-width:21px;padding:2px 6px;font-size:11px}
+.bottomNav{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:0;width:min(820px,100%);background:linear-gradient(180deg,#1a1411fa,#100d0bfa);padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav{border:0;border-radius:13px;background:#2c241f;color:#cfc4ba;font-weight:900;padding:12px}.nav.active{background:linear-gradient(180deg,#fff3d5,#f3dca9);color:#211a15;box-shadow:inset 0 0 0 1px #e2c987}.badge{display:inline-block;background:var(--red);color:#fff;border-radius:999px;min-width:21px;padding:2px 6px;font-size:11px}
 .modalBg{position:fixed;inset:0;background:#0008;z-index:60;display:none;align-items:flex-end;justify-content:center}.modalBg.open{display:flex}.modal{width:min(820px,100%);max-height:88vh;overflow:auto;background:var(--panel);border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}.modalHead{display:flex;align-items:center}.modalHead h2{flex:1;margin:0}.close{border:0;background:#eadfce;border-radius:10px;width:38px;height:38px;font-size:20px}.row{padding:13px 0;border-bottom:1px solid var(--line)}.row label{display:block;font-weight:900;margin-bottom:7px}.row select,.row input{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff}.help{font-size:12px;color:var(--muted);margin-top:5px}.dangerBtn{width:100%;border:1px solid #d8a7a3;background:#fff;color:#9a211b;border-radius:13px;padding:12px;font-weight:900;margin-top:14px}.note{font-size:11px;color:var(--muted);padding:0 14px 18px;line-height:1.55}.empty{text-align:center;color:var(--muted);padding:32px}
 .toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,14px);background:#171310;color:#fff;padding:11px 14px;border-radius:12px;font-weight:800;opacity:0;pointer-events:none;transition:.18s;z-index:80;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.startBar{grid-template-columns:minmax(0,1fr) 300px;align-items:center}.startActions{grid-template-columns:1fr}}
@@ -27,14 +28,14 @@
 <body>
 <div class="app">
 <header class="hero">
-<div class="heroRow"><div class="brand">ぼたん会計</div><div class="timerBox"><div class="timerPart"><div class="timerLabel">経過</div><div id="elapsed" class="timerValue">00:00</div></div><div class="timerPart"><div class="timerLabel">残り</div><div id="remaining" class="timerValue">60:00</div></div></div><button id="gear" class="gear">⚙</button></div>
+<div class="heroRow"><div class="brand">ぼたんセルフ会計</div><div class="timerBox"><div class="timerPart"><div class="timerLabel">経過</div><div id="elapsed" class="timerValue">00:00</div></div><div class="timerPart"><div class="timerLabel">残り</div><div id="remaining" class="timerValue">60:00</div></div></div><button id="gear" class="gear">⚙</button></div>
 <div class="summary"><div class="sum total"><small>お会計目安</small><b id="total">0円</b></div><div class="sum"><small>注文</small><b id="count">0品</b></div><div class="sum"><small>未到着</small><b id="pending">0品</b></div></div>
 </header>
 <main id="orderView">
 <div class="startBar"><div class="startText"><div class="startTitle">60分飲み放題</div><div id="startSub" class="startSub">開始したらタイマーをスタート</div></div><div class="startActions"><button id="start" class="primary">スタート</button><button id="extend" class="extend" disabled>＋30分延長</button><div id="extendPrice" class="extendPrice">大人439円 / 子供165円（税込）</div></div></div><div id="breakdown" class="breakdown"></div>
 <div class="toolbar"><div id="tabs" class="tabs"></div><input id="search" class="search" placeholder="商品名を検索"></div>
 <div id="sectionTitle" class="sectionTitle">すべての商品</div><div id="grid" class="grid"></div>
-<div class="note">※料理は税込価格。ドリンクは飲み放題に含まれる前提で注文記録のみ行い、通常税込価格を参考表示します。</div>
+<div class="note">※商品ボタンは税込価格表示。会計計算は税別価格を合算し、クーポン適用後に消費税を計算します。ドリンクメニューも通常課金商品として会計に加算します。</div>
 </main>
 <main id="historyView" style="display:none"><div class="history"><div class="filters"><button class="filter active" data-filter="all">すべて</button><button class="filter" data-filter="pending">未到着のみ</button><button class="filter" data-filter="served">到着済み</button></div><div id="history"></div></div></main>
 </div>
@@ -131,44 +132,46 @@ var MENU=[
 {id:"kimchi_mix",name:"キムチ盛り",net:498,gross:547,cat:"サラダ・野菜"},
 {id:"caesar",name:"シーザーサラダ",net:598,gross:658,cat:"サラダ・野菜"},
 {id:"choregi",name:"チョレギサラダ",net:498,gross:547,cat:"サラダ・野菜"},
-{id:"premium_malts_m",name:"神泡のザ・プレミアム・モルツ（中）",net:299,gross:329,cat:"ビール",included:true},
-{id:"premium_malts_l",name:"神泡のザ・プレミアム・モルツ（大）",net:599,gross:659,cat:"ビール",included:true},
-{id:"asahi_superdry_bottle",name:"アサヒスーパードライ（瓶）",net:399,gross:439,cat:"ビール",included:true},
-{id:"all_free",name:"オールフリー",net:399,gross:439,cat:"ビール",included:true},
-{id:"jim_beam",name:"ジムビームハイボール",net:299,gross:329,cat:"ハイボール",included:true},
-{id:"jim_beam_mega",name:"メガ ジムビームハイボール",net:499,gross:549,cat:"ハイボール",included:true},
-{id:"kaku_highball",name:"角ハイボール",net:399,gross:439,cat:"ハイボール",included:true},
-{id:"chita_highball",name:"知多 風香るハイボール",net:699,gross:769,cat:"ハイボール",included:true},
-{id:"tako_high",name:"こだわり酒場のタコハイ",net:299,gross:329,cat:"サワー",included:true},
-{id:"lemon_sour",name:"こだわり酒場のレモンサワー",net:299,gross:329,cat:"サワー",included:true},
-{id:"setouchi_lemon",name:"瀬戸内レモンサワー",net:399,gross:439,cat:"サワー",included:true},
-{id:"setouchi_lemon_refill",name:"瀬戸内レモンサワー おかわり",net:299,gross:329,cat:"サワー",included:true},
-{id:"setouchi_lemon_mega",name:"メガ 瀬戸内レモンサワー",net:599,gross:659,cat:"サワー",included:true},
-{id:"sour_refill_mega",name:"メガ サワーおかわり",net:499,gross:549,cat:"サワー",included:true},
-{id:"black_oolong_high",name:"黒ウーロンハイ",net:399,gross:439,cat:"サワー",included:true},
-{id:"shochu_iichiko",name:"焼酎〈麦〉いいちこ",net:399,gross:439,cat:"焼酎・日本酒",included:true},
-{id:"shochu_kurokirishima",name:"焼酎〈芋〉黒霧島",net:399,gross:439,cat:"焼酎・日本酒",included:true},
-{id:"sake_suigei",name:"日本酒 酔鯨",net:499,gross:549,cat:"焼酎・日本酒",included:true},
-{id:"atsukan_1",name:"日本酒 熱燗（一合）",net:399,gross:439,cat:"焼酎・日本酒",included:true},
-{id:"atsukan_2",name:"日本酒 熱燗（二合）",net:699,gross:769,cat:"焼酎・日本酒",included:true},
-{id:"umeshu",name:"梅酒「梅酒にしませんか」",net:399,gross:439,cat:"焼酎・日本酒",included:true},
-{id:"makkori_glass",name:"マッコリ（グラス）",net:399,gross:439,cat:"焼酎・日本酒",included:true},
-{id:"makkori_yakan",name:"やかんマッコリ",net:1999,gross:2199,cat:"焼酎・日本酒",included:true},
-{id:"wine_red",name:"グラスワイン〈赤〉",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"cassis_orange",name:"カシスオレンジ",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"cassis_soda",name:"カシスソーダ",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"cassis_oolong",name:"カシスウーロン",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"peach_oolong",name:"ピーチウーロン",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"peach_fizz",name:"ピーチフィズ",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"fuzzy_navel",name:"ファジーネーブル",net:399,gross:439,cat:"カクテル・ワイン",included:true},
-{id:"soft_black_oolong",name:"黒ウーロン",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_cola",name:"コーラ",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_calpis_soda",name:"カルピスソーダ",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_melon_soda",name:"メロンソーダ",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_calpis",name:"カルピス",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_ginger_ale",name:"ジンジャーエール",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_orange",name:"オレンジジュース",net:199,gross:219,cat:"ソフトドリンク",included:true},
-{id:"soft_ramune",name:"ラムネ",net:199,gross:219,cat:"ソフトドリンク",included:true}
+{id:"premium_malts_m",name:"神泡のザ・プレミアム・モルツ（中）",net:299,gross:329,cat:"ビール",included:false},
+{id:"premium_malts_l",name:"神泡のザ・プレミアム・モルツ（大）",net:599,gross:659,cat:"ビール",included:false},
+{id:"asahi_superdry_bottle",name:"アサヒスーパードライ（瓶）",net:399,gross:439,cat:"ビール",included:false},
+{id:"all_free",name:"オールフリー",net:399,gross:439,cat:"ビール",included:false},
+{id:"hoppy_set",name:"ホッピーセット",net:399,gross:439,cat:"ビール",included:false},
+{id:"jim_beam",name:"ジムビームハイボール",net:299,gross:329,cat:"ハイボール",included:false},
+{id:"jim_beam_mega",name:"メガ ジムビームハイボール",net:499,gross:549,cat:"ハイボール",included:false},
+{id:"kaku_highball",name:"角ハイボール",net:399,gross:439,cat:"ハイボール",included:false},
+{id:"chita_highball",name:"知多 風香るハイボール",net:699,gross:769,cat:"ハイボール",included:false},
+{id:"tako_high",name:"こだわり酒場のタコハイ",net:299,gross:329,cat:"サワー",included:false},
+{id:"lemon_sour",name:"こだわり酒場のレモンサワー",net:299,gross:329,cat:"サワー",included:false},
+{id:"setouchi_lemon",name:"瀬戸内レモンサワー",net:399,gross:439,cat:"サワー",included:false},
+{id:"setouchi_lemon_refill",name:"瀬戸内レモンサワー おかわり",net:299,gross:329,cat:"サワー",included:false},
+{id:"setouchi_lemon_mega",name:"メガ 瀬戸内レモンサワー",net:599,gross:659,cat:"サワー",included:false},
+{id:"sour_refill_mega",name:"メガ サワーおかわり",net:499,gross:549,cat:"サワー",included:false},
+{id:"black_oolong_high",name:"黒ウーロンハイ",net:399,gross:439,cat:"サワー",included:false},
+{id:"shochu_iichiko",name:"焼酎〈麦〉いいちこ",net:399,gross:439,cat:"焼酎・日本酒",included:false},
+{id:"shochu_kurokirishima",name:"焼酎〈芋〉黒霧島",net:399,gross:439,cat:"焼酎・日本酒",included:false},
+{id:"sake_suigei",name:"日本酒 酔鯨",net:499,gross:549,cat:"焼酎・日本酒",included:false},
+{id:"atsukan_1",name:"日本酒 熱燗（一合）",net:399,gross:439,cat:"焼酎・日本酒",included:false},
+{id:"atsukan_2",name:"日本酒 熱燗（二合）",net:699,gross:769,cat:"焼酎・日本酒",included:false},
+{id:"umeshu",name:"梅酒「梅酒にしませんか」",net:399,gross:439,cat:"焼酎・日本酒",included:false},
+{id:"makkori_glass",name:"マッコリ（グラス）",net:399,gross:439,cat:"焼酎・日本酒",included:false},
+{id:"makkori_yakan",name:"やかんマッコリ",net:1999,gross:2199,cat:"焼酎・日本酒",included:false},
+{id:"wine_red",name:"グラスワイン〈赤〉",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"cassis_orange",name:"カシスオレンジ",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"cassis_soda",name:"カシスソーダ",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"cassis_oolong",name:"カシスウーロン",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"peach_oolong",name:"ピーチウーロン",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"peach_fizz",name:"ピーチフィズ",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"fuzzy_navel",name:"ファジーネーブル",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"nonalc_cocktail",name:"ノンアルコールカクテル各種",net:399,gross:439,cat:"カクテル・ワイン",included:false},
+{id:"soft_black_oolong",name:"黒ウーロン",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_cola",name:"コーラ",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_calpis_soda",name:"カルピスソーダ",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_melon_soda",name:"メロンソーダ",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_calpis",name:"カルピス",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_ginger_ale",name:"ジンジャーエール",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_orange",name:"オレンジジュース",net:199,gross:219,cat:"ソフトドリンク",included:false},
+{id:"soft_ramune",name:"ラムネ",net:199,gross:219,cat:"ソフトドリンク",included:false}
 ];
 
 var CATS=["すべて","★お気に入り","本日の特選","焼肉","タン","ホルモン","おつまみ","サラダ・野菜","〆・デザート","ビール","ハイボール","サワー","焼酎・日本酒","カクテル・ワイン","ソフトドリンク"];
@@ -228,7 +231,6 @@ function menuPrice(m){
 }
 function orderNet(o){
  if(typeof o.netPrice==="number")return o.netPrice;
- if(o.included)return 0;
  if(typeof o.price==="number")return guessNet(o.price);
  return 0;
 }
@@ -261,8 +263,8 @@ function renderMenu(){
  $("sectionTitle").textContent=cat==="すべて"?"すべての商品":cat;
  $("grid").innerHTML=a.map(function(m){
   var p=menuPrice(m),fav=st.favorites.indexOf(m.id)>=0;
-  var txt=m.included?"飲み放題":yen(p.gross);
-  var hint=m.included?"通常 "+yen(p.gross):"税込";
+  var txt=yen(p.gross);
+  var hint="税込";
   return '<div class="menuCard"><button class="favBtn '+(fav?'on':'')+'" data-fav="'+esc(m.id)+'" aria-label="お気に入り">'+(fav?'★':'☆')+'</button><button class="menu" data-menu="'+esc(m.id)+'"><div class="menuName">'+esc(m.name)+'</div><div class="menuPrice '+(m.included?'free':'')+'">'+txt+'<span class="hint">'+hint+'</span></div></button></div>';
  }).join("")||'<div class="empty" style="grid-column:1/-1">該当商品なし</div>';
  document.querySelectorAll("[data-menu]").forEach(function(b){b.onclick=function(){addOrder(b.dataset.menu)}});
@@ -277,7 +279,7 @@ function addOrder(id){
  if(!st.sessionStart){toast("先にタイマーをスタートしてください");return}
  var m=MENU.find(function(x){return x.id===id});if(!m)return;
  var p=menuPrice(m),now=Date.now(),e=Math.max(0,Math.floor((now-st.sessionStart)/1000));
- st.orders.push({id:now.toString(36)+Math.random().toString(36).slice(2,7),menuId:m.id,name:m.name,netPrice:m.included?0:p.net,grossPrice:m.included?0:p.gross,included:!!m.included,createdAt:now,elapsedSec:e,servedAt:null,cancelled:false});
+ st.orders.push({id:now.toString(36)+Math.random().toString(36).slice(2,7),menuId:m.id,name:m.name,netPrice:p.net,grossPrice:p.gross,included:false,createdAt:now,elapsedSec:e,servedAt:null,cancelled:false});
  save();renderSummary();renderHistory();if(navigator.vibrate)navigator.vibrate(25);toast(mmss(e)+" "+m.name+" を追加");
 }
 function renderSummary(){
@@ -313,7 +315,7 @@ function renderHistory(){
  if(filter==="served")a=a.filter(function(o){return !o.cancelled&&o.servedAt});
  $("history").innerHTML=a.map(function(o){
   var served=!!o.servedAt,w=Math.max(0,Math.floor(((served?o.servedAt:now)-o.createdAt)/1000));
-  var price=o.included?"飲み放題":yen(typeof o.grossPrice==="number"?o.grossPrice:(typeof o.price==="number"?o.price:grossFromNet(orderNet(o))));
+  var price=yen(typeof o.grossPrice==="number"?o.grossPrice:(typeof o.price==="number"?o.price:grossFromNet(orderNet(o))));
   return '<div class="item '+(served?'served ':'')+(o.cancelled?'cancelled':'')+'"><div class="top"><div class="time">'+mmss(o.elapsedSec||0)+'</div><div class="name">'+esc(o.name)+'</div><div class="price">'+price+'</div></div><div class="bottom">'+(o.cancelled?'<span class="wait">取消済み</span>':'<button class="status '+(served?'servedBtn':'pending')+'" data-status="'+esc(o.id)+'">'+(served?'✓ 到着済み':'● 未到着')+'</button><div class="wait">'+(served?'注文から '+mmss(w)+' で到着':'注文から '+mmss(w))+'</div><button class="cancel" data-cancel="'+esc(o.id)+'">取消</button>')+'</div></div>';
  }).join("")||'<div class="empty">まだ注文履歴はありません</div>';
  document.querySelectorAll("[data-status]").forEach(function(b){b.onclick=function(){var o=st.orders.find(function(x){return x.id===b.dataset.status});if(!o)return;o.servedAt=o.servedAt?null:Date.now();save();renderSummary();renderHistory()}});
@@ -349,7 +351,7 @@ function renderPriceEditor(){
  var a=MENU.filter(function(m){return !q||m.name.toLowerCase().indexOf(q)>=0});
  $("priceList").innerHTML=a.map(function(m){
   var p=menuPrice(m);
-  return '<div class="priceRow"><div class="priceName">'+esc(m.name)+(m.included?' <span class="hint">飲み放題内・通常価格</span>':'')+'</div><div class="priceInputs"><label>税別<input type="number" min="0" data-net="'+esc(m.id)+'" value="'+p.net+'"></label><label>税込表示<input type="number" min="0" data-gross="'+esc(m.id)+'" value="'+p.gross+'"></label></div></div>';
+  return '<div class="priceRow"><div class="priceName">'+esc(m.name)+''+'</div><div class="priceInputs"><label>税別<input type="number" min="0" data-net="'+esc(m.id)+'" value="'+p.net+'"></label><label>税込表示<input type="number" min="0" data-gross="'+esc(m.id)+'" value="'+p.gross+'"></label></div></div>';
  }).join("");
  document.querySelectorAll("[data-net]").forEach(function(inp){inp.onchange=function(){var id=inp.dataset.net,m=MENU.find(function(x){return x.id===id});if(!m)return;var net=Math.max(0,Math.round(num(inp.value,m.net)));var o=st.priceOverrides[id]||{};o.net=net;o.gross=grossFromNet(net);st.priceOverrides[id]=o;save();renderPriceEditor();renderMenu();toast("価格を更新しました")}});
  document.querySelectorAll("[data-gross]").forEach(function(inp){inp.onchange=function(){var id=inp.dataset.gross,m=MENU.find(function(x){return x.id===id});if(!m)return;var o=st.priceOverrides[id]||{};o.net=typeof o.net==="number"?o.net:m.net;o.gross=Math.max(0,Math.round(num(inp.value,m.gross)));st.priceOverrides[id]=o;save();renderMenu();toast("税込表示を更新しました")}});
