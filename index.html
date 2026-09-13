@@ -7,19 +7,19 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ぼたん会計">
-<title>ぼたん セルフ会計 V1.7</title>
+<title>ぼたん セルフ会計 V1.8</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#f4efe7;--panel:#fffdf8;--ink:#17120f;--muted:#766a60;--line:#dfd2c3;--red:#8f1f19;--red2:#b72b21;--dark:#16110e;--dark2:#241a15;--gold:#d6aa4a;--green:#26734a;--shadow:0 10px 30px rgba(44,28,18,.10)}
+:root{--bg:#f3efe8;--panel:#fffdfa;--ink:#171513;--muted:#756e67;--line:#ddd5cb;--red:#9d201a;--dark:#151311;--gold:#b89552;--green:#26734a;--shadow:0 8px 24px rgba(32,24,18,.08)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}button,input,select{font:inherit}button{touch-action:manipulation}body{padding-bottom:92px}.app{max-width:820px;margin:auto;min-height:100vh}
-.hero{position:sticky;top:0;z-index:20;background:linear-gradient(145deg,#120e0c 0%,#241813 62%,#321d16 100%);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;box-shadow:0 4px 18px #0003}.heroRow{display:flex;align-items:center;gap:10px}.brand{font-weight:950;font-size:15px;letter-spacing:.03em;white-space:nowrap}.timerBox{flex:1;display:flex;justify-content:center;gap:14px}.timerPart{text-align:center;min-width:82px}.timerLabel{font-size:11px;opacity:.7}.timerValue{font-size:23px;font-weight:900;font-variant-numeric:tabular-nums}.warn{color:#ffd75f}.danger{color:#ff8178}.gear{width:42px;height:42px;border-radius:12px;border:1px solid #ffffff2e;background:#2b231e;color:#fff;font-size:19px}
-.summary{margin-top:10px;display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:8px}.sum{background:linear-gradient(180deg,#ffffff14,#ffffff0c);border:1px solid #ffffff10;border-radius:14px;padding:9px 11px}.sum small{opacity:.7}.sum b{display:block;font-size:18px;margin-top:2px}.sum.total b{color:#f4c85e;font-size:22px;text-shadow:0 1px 10px #0006}
-.startBar{margin:14px;background:var(--panel);box-shadow:var(--shadow);border-radius:18px;padding:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.startText{min-width:0}.startTitle{font-weight:900;font-size:18px;white-space:nowrap}.startSub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.startActions{display:grid;grid-template-columns:1fr;gap:8px}.primary,.extend{border:0;border-radius:14px;padding:13px 14px;font-weight:900;width:100%}.primary{background:var(--red);color:#fff}.extend{background:#fff7d9;color:#5d4500;border:1px solid #d8b85c}.extend:disabled{opacity:.45}.extendPrice{text-align:center;font-size:11px;color:var(--muted);margin-top:-3px}
+.hero{position:sticky;top:0;z-index:20;background:#151311;color:#fff;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;box-shadow:0 4px 18px #0003}.heroRow{display:flex;align-items:center;gap:10px}.brand{min-width:86px;line-height:1.02;white-space:nowrap}.brandTop{display:block;font-size:14px;font-weight:800;letter-spacing:.18em;color:#d9c9b6}.brandBottom{display:block;margin-top:4px;font-size:19px;font-weight:950;letter-spacing:.02em;color:#fff}.timerBox{flex:1;display:flex;justify-content:center;gap:14px}.timerPart{text-align:center;min-width:82px}.timerLabel{font-size:11px;opacity:.7}.timerValue{font-size:23px;font-weight:900;font-variant-numeric:tabular-nums}.warn{color:#ffd75f}.danger{color:#ff8178}.gear{width:42px;height:42px;border-radius:12px;border:1px solid #ffffff2e;background:#2b231e;color:#fff;font-size:19px}
+.summary{margin-top:10px;display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:8px}.sum{background:#211e1b;border:1px solid #302b27;border-radius:13px;padding:9px 11px}.sum small{opacity:.7}.sum b{display:block;font-size:18px;margin-top:2px}.sum.total b{color:#e4bd6d;font-size:22px}
+.startBar{margin:14px;background:var(--panel);box-shadow:var(--shadow);border-radius:18px;padding:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.startText{min-width:0}.startTitle{font-weight:900;font-size:18px;white-space:nowrap}.startSub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.startActions{display:grid;grid-template-columns:1fr;gap:8px}.primary,.extend{border:0;border-radius:13px;padding:13px 14px;font-weight:900;width:100%}.primary{background:var(--red);color:#fff}.primary.paused{background:#2e2925}.extend{background:#fbf5e8;color:#594718;border:1px solid #d9c99d}.extend:disabled{opacity:.45}.extendPrice{text-align:center;font-size:11px;color:var(--muted);margin-top:-3px}.sessionTools{display:grid;grid-template-columns:1fr 1fr;gap:8px}.secondary{border:1px solid var(--line);background:#fff;color:#3a332e;border-radius:11px;padding:10px 11px;font-weight:850}.secondary.dangerLite{color:#8e211b;border-color:#e0beb9;background:#fffafa}
 .toolbar{padding:0 14px 10px}.tabs{display:flex;gap:8px;overflow:auto;scrollbar-width:none;padding:2px 0 4px}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 13px;font-weight:800;font-size:13px}.tab.active{background:var(--dark);color:#fff;border-color:var(--dark)}.search{width:100%;margin-top:9px;padding:12px 13px;border:1px solid var(--line);border-radius:13px;background:#fff}
-.sectionTitle{padding:4px 14px 8px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 18px}.menuCard{position:relative;min-width:0}.menu{width:100%;min-height:100px;text-align:left;border:1px solid #e1d4c4;background:linear-gradient(155deg,#fffefb 0%,#fff9ef 100%);border-radius:18px;padding:13px 44px 13px 13px;box-shadow:0 5px 16px rgba(61,35,20,.07);position:relative}.menu:active{transform:scale(.975)}.menuName{font-weight:900;line-height:1.28}.menuPrice{margin-top:9px;font-weight:900;color:var(--red);font-size:18px}.menuPrice.free{color:var(--green)}.hint{font-size:10px;color:var(--muted);margin-left:4px}.favBtn{position:absolute;z-index:2;right:8px;top:8px;width:32px;height:32px;border:1px solid #eadfce;border-radius:50%;background:#f6efe4;color:#a29383;font-size:18px;font-weight:900;box-shadow:0 2px 6px #0000000a}.favBtn.on{background:#f5d77b;color:#7a4e00;border-color:#e8c75f}.breakdown{margin:-2px 14px 12px;padding:10px 12px;border-radius:13px;background:#ede5d8;color:#5e534a;font-size:12px;line-height:1.55}.breakdown b{color:#2c241f}.priceSection{margin-top:14px;padding-top:4px}.priceSearch{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff;margin:8px 0}.priceList{display:grid;gap:8px}.priceRow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.priceName{font-weight:900;font-size:13px;margin-bottom:7px}.priceInputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.priceInputs label{font-size:10px;color:var(--muted);font-weight:800}.priceInputs input{margin-top:4px}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 10px;font-weight:800}.couponStatus{font-size:11px;margin-top:5px;color:var(--muted)}
+.sectionTitle{padding:4px 14px 8px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 18px}.menuCard{position:relative;min-width:0}.menu{width:100%;min-height:100px;text-align:left;border:1px solid #ded6cc;background:#fffdfa;border-radius:16px;padding:13px 44px 13px 13px;box-shadow:0 4px 14px rgba(46,34,24,.055);position:relative}.menu:active{transform:scale(.975)}.menuName{font-weight:900;line-height:1.28}.menuPrice{margin-top:9px;font-weight:900;color:var(--red);font-size:18px}.menuPrice.free{color:var(--green)}.hint{font-size:10px;color:var(--muted);margin-left:4px}.favBtn{position:absolute;z-index:2;right:8px;top:8px;width:32px;height:32px;border:1px solid #eadfce;border-radius:50%;background:#f6efe4;color:#a29383;font-size:18px;font-weight:900;box-shadow:0 2px 6px #0000000a}.favBtn.on{background:#f5d77b;color:#7a4e00;border-color:#e8c75f}.breakdown{margin:-2px 14px 12px;padding:10px 12px;border-radius:13px;background:#ede5d8;color:#5e534a;font-size:12px;line-height:1.55}.breakdown b{color:#2c241f}.priceSection{margin-top:14px;padding-top:4px}.priceSearch{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff;margin:8px 0}.priceList{display:grid;gap:8px}.priceRow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.priceName{font-weight:900;font-size:13px;margin-bottom:7px}.priceInputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.priceInputs label{font-size:10px;color:var(--muted);font-weight:800}.priceInputs input{margin-top:4px}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 10px;font-weight:800}.couponStatus{font-size:11px;margin-top:5px;color:var(--muted)}
 .history{padding:10px 14px 22px}.filters{display:flex;gap:8px;margin-bottom:12px}.filter{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;font-weight:800}.filter.active{background:var(--dark);color:#fff}.item{background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px;margin-bottom:9px}.item.served{opacity:.72}.item.cancelled{opacity:.45;text-decoration:line-through}.top{display:flex;gap:8px}.time{font-weight:900;color:var(--red);min-width:48px}.name{font-weight:900;flex:1}.price{font-weight:900}.bottom{display:flex;align-items:center;gap:8px;margin-top:9px}.status{border:0;border-radius:999px;padding:8px 11px;font-weight:900;font-size:12px}.pending{background:#ffe9c7;color:#7b4900}.servedBtn{background:#dff4e7;color:#17613a}.wait{font-size:12px;color:var(--muted);flex:1}.cancel{border:0;background:transparent;color:#8a817a;font-size:12px}
-.bottomNav{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:0;width:min(820px,100%);background:linear-gradient(180deg,#1a1411fa,#100d0bfa);padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav{border:0;border-radius:13px;background:#2c241f;color:#cfc4ba;font-weight:900;padding:12px}.nav.active{background:linear-gradient(180deg,#fff3d5,#f3dca9);color:#211a15;box-shadow:inset 0 0 0 1px #e2c987}.badge{display:inline-block;background:var(--red);color:#fff;border-radius:999px;min-width:21px;padding:2px 6px;font-size:11px}
+.bottomNav{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:0;width:min(820px,100%);background:#151311fa;padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav{border:0;border-radius:13px;background:#2c241f;color:#cfc4ba;font-weight:900;padding:12px}.nav.active{background:#f4e6c5;color:#211a15;box-shadow:inset 0 0 0 1px #d6bf88}.badge{display:inline-block;background:var(--red);color:#fff;border-radius:999px;min-width:21px;padding:2px 6px;font-size:11px}
 .modalBg{position:fixed;inset:0;background:#0008;z-index:60;display:none;align-items:flex-end;justify-content:center}.modalBg.open{display:flex}.modal{width:min(820px,100%);max-height:88vh;overflow:auto;background:var(--panel);border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}.modalHead{display:flex;align-items:center}.modalHead h2{flex:1;margin:0}.close{border:0;background:#eadfce;border-radius:10px;width:38px;height:38px;font-size:20px}.row{padding:13px 0;border-bottom:1px solid var(--line)}.row label{display:block;font-weight:900;margin-bottom:7px}.row select,.row input{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff}.help{font-size:12px;color:var(--muted);margin-top:5px}.dangerBtn{width:100%;border:1px solid #d8a7a3;background:#fff;color:#9a211b;border-radius:13px;padding:12px;font-weight:900;margin-top:14px}.note{font-size:11px;color:var(--muted);padding:0 14px 18px;line-height:1.55}.empty{text-align:center;color:var(--muted);padding:32px}
 .toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,14px);background:#171310;color:#fff;padding:11px 14px;border-radius:12px;font-weight:800;opacity:0;pointer-events:none;transition:.18s;z-index:80;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.startBar{grid-template-columns:minmax(0,1fr) 300px;align-items:center}.startActions{grid-template-columns:1fr}}
@@ -28,18 +28,18 @@
 <body>
 <div class="app">
 <header class="hero">
-<div class="heroRow"><div class="brand">ぼたんセルフ会計</div><div class="timerBox"><div class="timerPart"><div class="timerLabel">経過</div><div id="elapsed" class="timerValue">00:00</div></div><div class="timerPart"><div class="timerLabel">残り</div><div id="remaining" class="timerValue">60:00</div></div></div><button id="gear" class="gear">⚙</button></div>
+<div class="heroRow"><div class="brand"><span class="brandTop">ぼたん</span><span class="brandBottom">セルフ会計</span></div><div class="timerBox"><div class="timerPart"><div class="timerLabel">経過</div><div id="elapsed" class="timerValue">00:00</div></div><div class="timerPart"><div class="timerLabel">残り</div><div id="remaining" class="timerValue">60:00</div></div></div><button id="gear" class="gear">⚙</button></div>
 <div class="summary"><div class="sum total"><small>お会計目安</small><b id="total">0円</b></div><div class="sum"><small>注文</small><b id="count">0品</b></div><div class="sum"><small>未到着</small><b id="pending">0品</b></div></div>
 </header>
 <main id="orderView">
-<div class="startBar"><div class="startText"><div class="startTitle">60分飲み放題</div><div id="startSub" class="startSub">開始したらタイマーをスタート</div></div><div class="startActions"><button id="start" class="primary">スタート</button><button id="extend" class="extend" disabled>＋30分延長</button><div id="extendPrice" class="extendPrice">大人439円 / 子供165円（税込）</div></div></div><div id="breakdown" class="breakdown"></div>
+<div class="startBar"><div class="startText"><div class="startTitle">60分飲み放題</div><div id="startSub" class="startSub">開始したらタイマーをスタート</div></div><div class="startActions"><button id="start" class="primary">スタート</button><button id="extend" class="extend" disabled>＋30分延長</button><div id="extendPrice" class="extendPrice">大人439円 / 子供165円（税込）</div><div class="sessionTools"><button id="checkoutReset" class="secondary dangerLite">会計リセット</button><button id="openHistory" class="secondary">履歴を見る</button></div></div></div><div id="breakdown" class="breakdown"></div>
 <div class="toolbar"><div id="tabs" class="tabs"></div><input id="search" class="search" placeholder="商品名を検索"></div>
 <div id="sectionTitle" class="sectionTitle">すべての商品</div><div id="grid" class="grid"></div>
 <div class="note">※商品ボタンは税込価格表示。会計計算は税別価格を合算し、クーポン適用後に消費税を計算します。ドリンクメニューも通常課金商品として会計に加算します。</div>
 </main>
 <main id="historyView" style="display:none"><div class="history"><div class="filters"><button class="filter active" data-filter="all">すべて</button><button class="filter" data-filter="pending">未到着のみ</button><button class="filter" data-filter="served">到着済み</button></div><div id="history"></div></div></main>
 </div>
-<nav class="bottomNav"><button id="navOrder" class="nav active">🍖 注文</button><button id="navHistory" class="nav">🧾 履歴 <span id="badge" class="badge" style="display:none">0</span></button></nav>
+<nav class="bottomNav"><button id="navOrder" class="nav active">注文</button><button id="navHistory" class="nav">🧾 履歴 <span id="badge" class="badge" style="display:none">0</span></button></nav>
 <div id="toast" class="toast"></div>
 <div id="settings" class="modalBg"><div class="modal"><div class="modalHead"><h2>設定</h2><button class="close" data-close="settings">×</button></div>
 <div class="row"><label>大人人数</label><select id="adult"></select><div class="help">大人：飲み放題659円 + お通し330円 / 人（税込表示）</div></div>
@@ -177,7 +177,7 @@ var MENU=[
 var CATS=["すべて","★お気に入り","本日の特選","焼肉","タン","ホルモン","おつまみ","サラダ・野菜","〆・デザート","ビール","ハイボール","サワー","焼酎・日本酒","カクテル・ワイン","ソフトドリンク"];
 var KEY="botan_order_counter_v1_1";
 var def={
-schemaVersion:16,sessionStart:null,adultCount:1,childCount:0,
+schemaVersion:18,sessionStart:null,pausedAt:null,totalPausedMs:0,adultCount:1,childCount:0,
 adultBaseNet:599,otoshiNet:300,childBaseNet:250,
 adultExtNet:399,childExtNet:150,extCount:0,minutes:60,includeBase:true,
 taxRate:10,taxRounding:"floor",
@@ -194,7 +194,8 @@ function load(){
   var x=JSON.parse(localStorage.getItem(KEY)||"null");
   if(!x)return clone(def);
   var n=Object.assign(clone(def),x);
-  if(!x.schemaVersion||x.schemaVersion<16){n.taxRounding="floor";n.schemaVersion=16;}
+  if(!x.schemaVersion||x.schemaVersion<16){n.taxRounding="floor";}
+  if(!x.schemaVersion||x.schemaVersion<18){n.pausedAt=null;n.totalPausedMs=0;n.schemaVersion=18;}
   if(typeof x.adultCount!=="number"&&typeof x.partySize==="number")n.adultCount=x.partySize;
   if(typeof x.adultBaseNet!=="number"&&typeof x.adultBase==="number")n.adultBaseNet=guessNet(x.adultBase);
   if(typeof x.otoshiNet!=="number"&&typeof x.otoshi==="number")n.otoshiNet=guessNet(x.otoshi);
@@ -222,7 +223,7 @@ function taxAmount(net){
  return Math.round(v);
 }
 function grossFromNet(net){net=Math.max(0,Math.round(num(net,0)));return net+taxAmount(net)}
-function elapsed(){return st.sessionStart?Math.max(0,Math.floor((Date.now()-st.sessionStart)/1000)):0}
+function elapsed(){if(!st.sessionStart)return 0;var end=st.pausedAt||Date.now();return Math.max(0,Math.floor((end-st.sessionStart-num(st.totalPausedMs,0))/1000))}
 function activeOrders(){return st.orders.filter(function(o){return !o.cancelled})}
 function pendingOrders(){return activeOrders().filter(function(o){return !o.servedAt})}
 function menuPrice(m){
@@ -302,10 +303,12 @@ function renderTimer(){
  else{r.textContent="+"+mmss(-rem);r.classList.add("danger")}
  if(st.sessionStart){
   var d=new Date(st.sessionStart),x=st.extCount?" ・ 延長"+st.extCount+"回（合計"+(st.minutes+st.extCount*30)+"分）":"";
-  $("startSub").textContent=pad(d.getHours())+":"+pad(d.getMinutes())+" 開始"+x;
-  $("start").textContent="進行中";$("start").disabled=true;$("extend").disabled=false;
+  $("startSub").textContent=pad(d.getHours())+":"+pad(d.getMinutes())+" 開始"+x+(st.pausedAt?" ・ 一時停止中":"");
+  $("start").disabled=false;$("extend").disabled=false;
+  if(st.pausedAt){$("start").textContent="▶ 再開";$("start").classList.add("paused");}
+  else{$("start").textContent="Ⅱ 一時停止";$("start").classList.remove("paused");}
  }else{
-  $("startSub").textContent="開始したらタイマーをスタート";$("start").textContent="スタート";$("start").disabled=false;$("extend").disabled=true;
+  $("startSub").textContent="開始したらタイマーをスタート";$("start").textContent="スタート";$("start").disabled=false;$("start").classList.remove("paused");$("extend").disabled=true;
  }
  $("extendPrice").textContent="大人"+yen(grossFromNet(st.adultExtNet))+" / 子供"+yen(grossFromNet(st.childExtNet))+"（税込）";
 }
@@ -360,7 +363,16 @@ function open(id){$(id).classList.add("open")}
 function close(id){$(id).classList.remove("open")}
 function switchView(v){view=v;$("orderView").style.display=v==="order"?"block":"none";$("historyView").style.display=v==="history"?"block":"none";$("navOrder").classList.toggle("active",v==="order");$("navHistory").classList.toggle("active",v==="history");if(v==="history")renderHistory()}
 
-$("start").onclick=function(){if(!st.sessionStart){st.sessionStart=Date.now();save();renderTimer();renderSummary();toast("60分タイマーを開始しました")}};
+$("start").onclick=function(){
+ if(!st.sessionStart){
+  st.sessionStart=Date.now();st.pausedAt=null;st.totalPausedMs=0;save();renderTimer();renderSummary();toast("60分タイマーを開始しました");return;
+ }
+ if(st.pausedAt){
+  st.totalPausedMs=num(st.totalPausedMs,0)+(Date.now()-st.pausedAt);st.pausedAt=null;save();renderTimer();toast("タイマーを再開しました");
+ }else{
+  st.pausedAt=Date.now();save();renderTimer();toast("タイマーを一時停止しました");
+ }
+};
 $("extend").onclick=function(){
  if(!st.sessionStart)return;
  var a=st.adultCount*st.adultExtNet,c=st.childCount*st.childExtNet,t=a+c;
@@ -377,14 +389,23 @@ $("resetPrices").onclick=function(){if(confirm("全商品の価格設定を初�
 $("applyTime").onclick=function(){
  var v=$("startTime").value;if(!v){toast("時刻を選んでください");return}
  var p=v.split(":"),d=new Date();d.setHours(Number(p[0]),Number(p[1]),0,0);if(d.getTime()>Date.now()+60000)d.setDate(d.getDate()-1);
- st.sessionStart=d.getTime();st.orders.forEach(function(o){o.elapsedSec=Math.max(0,Math.floor((o.createdAt-st.sessionStart)/1000))});save();renderTimer();renderHistory();close("settings");toast("開始時刻を変更しました");
+ st.sessionStart=d.getTime();st.pausedAt=null;st.totalPausedMs=0;st.orders.forEach(function(o){o.elapsedSec=Math.max(0,Math.floor((o.createdAt-st.sessionStart)/1000))});save();renderTimer();renderHistory();close("settings");toast("開始時刻を変更しました");
 };
+function resetCurrentCheckout(){
+ var keep={adultCount:st.adultCount,childCount:st.childCount,adultBaseNet:st.adultBaseNet,otoshiNet:st.otoshiNet,childBaseNet:st.childBaseNet,adultExtNet:st.adultExtNet,childExtNet:st.childExtNet,minutes:st.minutes,includeBase:st.includeBase,taxRate:st.taxRate,taxRounding:st.taxRounding,couponEnabled:st.couponEnabled,couponMinGross:st.couponMinGross,couponDiscountNet:st.couponDiscountNet,favorites:st.favorites,priceOverrides:st.priceOverrides};
+ st=Object.assign(clone(def),keep);save();renderAll();
+}
 $("reset").onclick=function(){
- if(confirm("タイマー・注文履歴・到着状況をすべてリセットしますか？")){
-  var keep={adultCount:st.adultCount,childCount:st.childCount,adultBaseNet:st.adultBaseNet,otoshiNet:st.otoshiNet,childBaseNet:st.childBaseNet,adultExtNet:st.adultExtNet,childExtNet:st.childExtNet,minutes:st.minutes,includeBase:st.includeBase,taxRate:st.taxRate,taxRounding:st.taxRounding,couponEnabled:st.couponEnabled,couponMinGross:st.couponMinGross,couponDiscountNet:st.couponDiscountNet,favorites:st.favorites,priceOverrides:st.priceOverrides};
-  st=Object.assign(clone(def),keep);save();renderAll();close("settings");toast("今回の注文をリセットしました");
+ if(confirm("タイマー・注文履歴・到着状況・お会計をすべてリセットしますか？")){
+  resetCurrentCheckout();close("settings");toast("今回のお会計をリセットしました");
  }
 };
+$("checkoutReset").onclick=function(){
+ if(confirm("現在のお会計をリセットしますか？\n注文履歴・タイマー・延長回数も0に戻ります。")){
+  resetCurrentCheckout();toast("お会計をリセットしました");
+ }
+};
+$("openHistory").onclick=function(){switchView("history")};
 $("navOrder").onclick=function(){switchView("order")};$("navHistory").onclick=function(){switchView("history")};
 document.querySelectorAll("[data-filter]").forEach(function(b){b.onclick=function(){filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(function(x){x.classList.toggle("active",x===b)});renderHistory()}});
 
