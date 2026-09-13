@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ぼたん会計">
-<title>ぼたん 注文・会計カウンター V1.5</title>
+<title>ぼたん 注文・会計カウンター V1.6</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <style>
 :root{--bg:#f5efe4;--panel:#fffaf0;--ink:#1f1a16;--muted:#786e65;--line:#ded2c2;--red:#a51f18;--dark:#171310;--green:#26734a;--shadow:0 8px 28px rgba(44,28,18,.1)}
@@ -83,10 +83,10 @@ var MENU=[
 {id:"special_mino",name:"やみつき上ミノ",net:798,gross:878,cat:"本日の特選"},
 {id:"special_hida_karubi",name:"飛騨牛特上霜降りカルビ",net:1298,gross:1428,cat:"本日の特選"},
 {id:"special_hida_akami",name:"飛騨牛特上赤身ロース",net:1298,gross:1428,cat:"本日の特選"},
-{id:"special_hida_yukke",name:"飛騨牛レアステーキユッケ",net:998,gross:1098,cat:"本日の特選"},
-{id:"aka",name:"名物アカ",net:398,gross:437,cat:"ホルモン"},
+{id:"special_hida_yukke",name:"飛騨牛レアステーキユッケ",net:999,gross:1098,cat:"本日の特選"},
+{id:"aka",name:"名物アカ",net:399,gross:439,cat:"ホルモン"},
 {id:"shiro",name:"名物シロ",net:398,gross:437,cat:"ホルモン"},
-{id:"maboroshi_tan",name:"ぼたん幻のタン",net:498,gross:547,cat:"タン"},
+{id:"maboroshi_tan",name:"ぼたん幻のタン",net:499,gross:549,cat:"タン"},
 {id:"atsugiri_tan",name:"厚切りタン",net:1298,gross:1428,cat:"タン"},
 {id:"kori_tan",name:"コリコリタン",net:398,gross:437,cat:"タン"},
 {id:"fuwa_tan",name:"ふわタン",net:898,gross:987,cat:"タン"},
@@ -100,7 +100,7 @@ var MENU=[
 {id:"niku_sushi",name:"とろける肉寿司（1貫）",net:298,gross:327,cat:"焼肉"},
 {id:"nama_senmai",name:"生センマイ",net:598,gross:658,cat:"ホルモン"},
 {id:"heart",name:"ぼたんの心臓（ハツ）",net:298,gross:327,cat:"ホルモン"},
-{id:"kori",name:"歯応えポッポ（コリコリ）",net:398,gross:437,cat:"ホルモン"},
+{id:"kori",name:"歯応えポッポ（コリコリ）",net:399,gross:439,cat:"ホルモン"},
 {id:"adult_horumon",name:"大人のホルモン",net:498,gross:547,cat:"ホルモン"},
 {id:"spicy_horumon",name:"赤辛ホルモン",net:498,gross:547,cat:"ホルモン"},
 {id:"liver",name:"玄人好みの焼きレバー",net:298,gross:327,cat:"ホルモン"},
@@ -115,13 +115,13 @@ var MENU=[
 {id:"ice",name:"アイス各種",net:200,gross:220,cat:"〆・デザート"},
 {id:"reimen",name:"ぼたん冷麺",net:598,gross:658,cat:"〆・デザート"},
 {id:"ogaki_ramen",name:"大垣ラーメン",net:598,gross:658,cat:"〆・デザート"},
-{id:"egg_soup",name:"玉子スープ",net:398,gross:437,cat:"〆・デザート"},
+{id:"egg_soup",name:"玉子スープ",net:399,gross:439,cat:"〆・デザート"},
 {id:"akadashi",name:"赤出汁",net:298,gross:327,cat:"〆・デザート"},
 {id:"bibimbap",name:"石焼ビビンバ",net:598,gross:658,cat:"〆・デザート"},
 {id:"tkg",name:"焼肉専用TKG",net:498,gross:547,cat:"〆・デザート"},
 {id:"garlic_rice",name:"ガーリックバターライス",net:598,gross:658,cat:"〆・デザート"},
 {id:"rice_s",name:"白ごはん（小）",net:198,gross:217,cat:"〆・デザート"},
-{id:"rice_m",name:"白ごはん（中）",net:298,gross:327,cat:"〆・デザート"},
+{id:"rice_m",name:"白ごはん（中）",net:299,gross:329,cat:"〆・デザート"},
 {id:"rice_l",name:"白ごはん（大）",net:398,gross:437,cat:"〆・デザート"},
 {id:"kimchi",name:"単品キムチ",net:298,gross:327,cat:"サラダ・野菜"},
 {id:"moyashi",name:"単品もやし",net:298,gross:327,cat:"サラダ・野菜"},
@@ -177,7 +177,7 @@ var def={
 sessionStart:null,adultCount:1,childCount:0,
 adultBaseNet:599,otoshiNet:300,childBaseNet:250,
 adultExtNet:399,childExtNet:150,extCount:0,minutes:60,includeBase:true,
-taxRate:10,taxRounding:"round",
+taxRate:10,taxRounding:"floor",
 couponEnabled:false,couponMinGross:0,couponDiscountNet:0,
 favorites:[],priceOverrides:{},orders:[]
 };
