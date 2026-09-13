@@ -1,5 +1,5 @@
 {
-  "name": "ぼたん 注文・会計カウンター",
+  "name": "ぼたん セルフ会計",
   "short_name": "ぼたん会計",
   "start_url": "./",
   "display": "standalone",
