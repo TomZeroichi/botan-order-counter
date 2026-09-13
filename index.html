@@ -7,21 +7,21 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ぼたん会計">
-<title>ぼたん 注文・会計カウンター V1.4</title>
+<title>ぼたん 注文・会計カウンター V1.5</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <style>
 :root{--bg:#f5efe4;--panel:#fffaf0;--ink:#1f1a16;--muted:#786e65;--line:#ded2c2;--red:#a51f18;--dark:#171310;--green:#26734a;--shadow:0 8px 28px rgba(44,28,18,.1)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}button,input,select{font:inherit}button{touch-action:manipulation}body{padding-bottom:92px}.app{max-width:820px;margin:auto;min-height:100vh}
 .hero{position:sticky;top:0;z-index:20;background:#171310;color:#fff;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;box-shadow:0 4px 18px #0003}.heroRow{display:flex;align-items:center;gap:10px}.brand{font-weight:900;font-size:16px}.timerBox{flex:1;display:flex;justify-content:center;gap:14px}.timerPart{text-align:center;min-width:82px}.timerLabel{font-size:11px;opacity:.7}.timerValue{font-size:23px;font-weight:900;font-variant-numeric:tabular-nums}.warn{color:#ffd75f}.danger{color:#ff8178}.gear{width:42px;height:42px;border-radius:12px;border:1px solid #ffffff2e;background:#2b231e;color:#fff;font-size:19px}
 .summary{margin-top:10px;display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:8px}.sum{background:#ffffff14;border-radius:12px;padding:8px 10px}.sum small{opacity:.7}.sum b{display:block;font-size:18px;margin-top:2px}.sum.total b{color:#ffd75f;font-size:21px}
-.startBar{margin:14px;background:var(--panel);box-shadow:var(--shadow);border-radius:18px;padding:14px;display:flex;align-items:center;gap:10px}.startText{flex:1}.startTitle{font-weight:900;font-size:17px}.startSub{font-size:12px;color:var(--muted);margin-top:3px}.primary,.extend{border:0;border-radius:14px;padding:12px 14px;font-weight:900}.primary{background:var(--red);color:#fff}.extend{background:#fff7d9;color:#5d4500;border:1px solid #d8b85c}.extend:disabled{opacity:.45}
+.startBar{margin:14px;background:var(--panel);box-shadow:var(--shadow);border-radius:18px;padding:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.startText{min-width:0}.startTitle{font-weight:900;font-size:18px;white-space:nowrap}.startSub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}.startActions{display:grid;grid-template-columns:1fr;gap:8px}.primary,.extend{border:0;border-radius:14px;padding:13px 14px;font-weight:900;width:100%}.primary{background:var(--red);color:#fff}.extend{background:#fff7d9;color:#5d4500;border:1px solid #d8b85c}.extend:disabled{opacity:.45}.extendPrice{text-align:center;font-size:11px;color:var(--muted);margin-top:-3px}
 .toolbar{padding:0 14px 10px}.tabs{display:flex;gap:8px;overflow:auto;scrollbar-width:none;padding:2px 0 4px}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 13px;font-weight:800;font-size:13px}.tab.active{background:var(--dark);color:#fff;border-color:var(--dark)}.search{width:100%;margin-top:9px;padding:12px 13px;border:1px solid var(--line);border-radius:13px;background:#fff}
-.sectionTitle{padding:4px 14px 8px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 18px}.menu{min-height:92px;text-align:left;border:1px solid #dfd3c3;background:#fffdf7;border-radius:16px;padding:12px;box-shadow:0 3px 12px #32140f0f;position:relative}.menu:active{transform:scale(.975)}.menuName{font-weight:900;line-height:1.28}.menuPrice{margin-top:9px;font-weight:900;color:var(--red);font-size:18px}.menuPrice.free{color:var(--green)}.hint{font-size:10px;color:var(--muted);margin-left:4px}
+.sectionTitle{padding:4px 14px 8px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 18px}.menuCard{position:relative;min-width:0}.menu{width:100%;min-height:96px;text-align:left;border:1px solid #dfd3c3;background:#fffdf7;border-radius:16px;padding:12px 42px 12px 12px;box-shadow:0 3px 12px #32140f0f;position:relative}.menu:active{transform:scale(.975)}.menuName{font-weight:900;line-height:1.28}.menuPrice{margin-top:9px;font-weight:900;color:var(--red);font-size:18px}.menuPrice.free{color:var(--green)}.hint{font-size:10px;color:var(--muted);margin-left:4px}.favBtn{position:absolute;z-index:2;right:7px;top:7px;width:32px;height:32px;border:0;border-radius:50%;background:#f1e7d6;color:#9d8f80;font-size:18px;font-weight:900}.favBtn.on{background:#ffe6a6;color:#9a6700}.breakdown{margin:-2px 14px 12px;padding:10px 12px;border-radius:13px;background:#ede5d8;color:#5e534a;font-size:12px;line-height:1.55}.breakdown b{color:#2c241f}.priceSection{margin-top:14px;padding-top:4px}.priceSearch{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff;margin:8px 0}.priceList{display:grid;gap:8px}.priceRow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.priceName{font-weight:900;font-size:13px;margin-bottom:7px}.priceInputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.priceInputs label{font-size:10px;color:var(--muted);font-weight:800}.priceInputs input{margin-top:4px}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 10px;font-weight:800}.couponStatus{font-size:11px;margin-top:5px;color:var(--muted)}
 .history{padding:10px 14px 22px}.filters{display:flex;gap:8px;margin-bottom:12px}.filter{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;font-weight:800}.filter.active{background:var(--dark);color:#fff}.item{background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px;margin-bottom:9px}.item.served{opacity:.72}.item.cancelled{opacity:.45;text-decoration:line-through}.top{display:flex;gap:8px}.time{font-weight:900;color:var(--red);min-width:48px}.name{font-weight:900;flex:1}.price{font-weight:900}.bottom{display:flex;align-items:center;gap:8px;margin-top:9px}.status{border:0;border-radius:999px;padding:8px 11px;font-weight:900;font-size:12px}.pending{background:#ffe9c7;color:#7b4900}.servedBtn{background:#dff4e7;color:#17613a}.wait{font-size:12px;color:var(--muted);flex:1}.cancel{border:0;background:transparent;color:#8a817a;font-size:12px}
 .bottomNav{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:0;width:min(820px,100%);background:#171310f7;padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav{border:0;border-radius:13px;background:#2c241f;color:#cfc4ba;font-weight:900;padding:12px}.nav.active{background:#fff1cf;color:#211a15}.badge{display:inline-block;background:var(--red);color:#fff;border-radius:999px;min-width:21px;padding:2px 6px;font-size:11px}
 .modalBg{position:fixed;inset:0;background:#0008;z-index:60;display:none;align-items:flex-end;justify-content:center}.modalBg.open{display:flex}.modal{width:min(820px,100%);max-height:88vh;overflow:auto;background:var(--panel);border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}.modalHead{display:flex;align-items:center}.modalHead h2{flex:1;margin:0}.close{border:0;background:#eadfce;border-radius:10px;width:38px;height:38px;font-size:20px}.row{padding:13px 0;border-bottom:1px solid var(--line)}.row label{display:block;font-weight:900;margin-bottom:7px}.row select,.row input{width:100%;padding:11px;border-radius:11px;border:1px solid var(--line);background:#fff}.help{font-size:12px;color:var(--muted);margin-top:5px}.dangerBtn{width:100%;border:1px solid #d8a7a3;background:#fff;color:#9a211b;border-radius:13px;padding:12px;font-weight:900;margin-top:14px}.note{font-size:11px;color:var(--muted);padding:0 14px 18px;line-height:1.55}.empty{text-align:center;color:var(--muted);padding:32px}
 .toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,14px);background:#171310;color:#fff;padding:11px 14px;border-radius:12px;font-weight:800;opacity:0;pointer-events:none;transition:.18s;z-index:80;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.startBar{grid-template-columns:minmax(0,1fr) 300px;align-items:center}.startActions{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -31,7 +31,7 @@
 <div class="summary"><div class="sum total"><small>お会計目安</small><b id="total">0円</b></div><div class="sum"><small>注文</small><b id="count">0品</b></div><div class="sum"><small>未到着</small><b id="pending">0品</b></div></div>
 </header>
 <main id="orderView">
-<div class="startBar"><div class="startText"><div class="startTitle">60分飲み放題</div><div id="startSub" class="startSub">開始したらタイマーをスタート</div></div><div><button id="start" class="primary">スタート</button><button id="extend" class="extend" disabled style="display:block;margin-top:7px">＋30分延長</button></div></div>
+<div class="startBar"><div class="startText"><div class="startTitle">60分飲み放題</div><div id="startSub" class="startSub">開始したらタイマーをスタート</div></div><div class="startActions"><button id="start" class="primary">スタート</button><button id="extend" class="extend" disabled>＋30分延長</button><div id="extendPrice" class="extendPrice">大人439円 / 子供165円（税込）</div></div></div><div id="breakdown" class="breakdown"></div>
 <div class="toolbar"><div id="tabs" class="tabs"></div><input id="search" class="search" placeholder="商品名を検索"></div>
 <div id="sectionTitle" class="sectionTitle">すべての商品</div><div id="grid" class="grid"></div>
 <div class="note">※料理は税込価格。ドリンクは飲み放題に含まれる前提で注文記録のみ行い、通常税込価格を参考表示します。</div>
@@ -41,67 +41,354 @@
 <nav class="bottomNav"><button id="navOrder" class="nav active">🍖 注文</button><button id="navHistory" class="nav">🧾 履歴 <span id="badge" class="badge" style="display:none">0</span></button></nav>
 <div id="toast" class="toast"></div>
 <div id="settings" class="modalBg"><div class="modal"><div class="modalHead"><h2>設定</h2><button class="close" data-close="settings">×</button></div>
-<div class="row"><label>大人人数</label><select id="adult"></select><div class="help">大人：飲み放題659円 + お通し330円 / 人</div></div>
-<div class="row"><label>子供人数</label><select id="child"></select><div class="help">子供：飲み放題275円 / 人（お通しなし）</div></div>
-<div class="row"><label>大人 飲み放題（税込）</label><input id="adultBase" type="number"></div>
-<div class="row"><label>お通し 大人1人（税込）</label><input id="otoshi" type="number"></div>
-<div class="row"><label>子供 飲み放題（税込）</label><input id="childBase" type="number"></div>
-<div class="row"><label>大人 30分延長（税込）</label><input id="adultExt" type="number"></div>
-<div class="row"><label>子供 30分延長（税込）</label><input id="childExt" type="number"><div class="help">延長は席全員が同時に30分延長されます。</div></div>
+<div class="row"><label>大人人数</label><select id="adult"></select><div class="help">大人：飲み放題659円 + お通し330円 / 人（税込表示）</div></div>
+<div class="row"><label>子供人数</label><select id="child"></select><div class="help">子供：飲み放題275円 / 人（税込表示・お通しなし）</div></div>
+<div class="row"><label>大人 飲み放題（税別）</label><input id="adultBaseNet" type="number" min="0"><div class="help">現在：税別599円 → 税込659円表示</div></div>
+<div class="row"><label>お通し 大人1人（税別）</label><input id="otoshiNet" type="number" min="0"><div class="help">現在：税別300円 → 税込330円表示</div></div>
+<div class="row"><label>子供 飲み放題（税別）</label><input id="childBaseNet" type="number" min="0"><div class="help">現在：税別250円 → 税込275円表示</div></div>
+<div class="row"><label>大人 30分延長（税別）</label><input id="adultExtNet" type="number" min="0"><div class="help">現在：税別399円 → 税込439円表示</div></div>
+<div class="row"><label>子供 30分延長（税別）</label><input id="childExtNet" type="number" min="0"><div class="help">現在：税別150円 → 税込165円表示</div></div>
 <div class="row"><label><input id="includeBase" type="checkbox" style="width:auto"> 飲み放題料金を会計に含める</label></div>
 <div class="row"><label>基本時間（分）</label><input id="minutes" type="number" min="1" max="300"></div>
-<div class="row"><label>開始時刻を修正</label><input id="startTime" type="time"><button id="applyTime" class="primary" style="width:100%;margin-top:8px">この時刻に変更</button></div>
+
+<div class="row"><label>消費税率（%）</label><input id="taxRate" type="number" min="0" max="100" step="0.1"></div>
+<div class="row"><label>消費税の端数処理</label><select id="taxRounding"><option value="round">四捨五入</option><option value="floor">切り捨て</option><option value="ceil">切り上げ</option></select><div class="help">税別合計を出してから、最後に税金を計算します。</div></div>
+
+<div class="row">
+<label><input id="couponEnabled" type="checkbox" style="width:auto"> 割引クーポンを使う</label>
+<div class="help">利用条件を満たした場合、税別合計から割引して、その後に消費税を計算します。</div>
+<div style="margin-top:10px"><label>利用条件（税込・円以上）</label><input id="couponMinGross" type="number" min="0"></div>
+<div style="margin-top:10px"><label>クーポン割引額（税別計算から引く金額）</label><input id="couponDiscountNet" type="number" min="0"></div>
+<div id="couponStatus" class="couponStatus"></div>
+</div>
+
+<div class="row"><label>開始時刻を修正</label><input id="startTime" type="time"><button id="applyTime" class="primary" style="margin-top:8px">この時刻に変更</button></div>
+
+<div class="priceSection">
+<h3 style="margin:8px 0 2px">商品価格設定</h3>
+<div class="help">全商品を変更できます。計算には税別価格を使用し、商品ボタンには税込表示価格を表示します。</div>
+<input id="priceSearch" class="priceSearch" placeholder="商品名を検索">
+<div id="priceList" class="priceList"></div>
+<button id="resetPrices" class="miniBtn" style="width:100%;margin-top:10px">商品価格を初期値に戻す</button>
+</div>
+
 <button id="reset" class="dangerBtn">今回の注文をすべてリセット</button>
 </div></div>
 <script>
 (function(){
 "use strict";
+
 var MENU=[
-["極上厚切り牛タン",1428,"本日の特選"],["やみつき上ミノ",878,"本日の特選"],["飛騨牛特上霜降りカルビ",1428,"本日の特選"],["飛騨牛特上赤身ロース",1428,"本日の特選"],["飛騨牛レアステーキユッケ",1098,"本日の特選"],
-["名物アカ",437,"ホルモン"],["名物シロ",437,"ホルモン"],["ぼたん幻のタン",547,"タン"],["厚切りタン",1428,"タン"],["コリコリタン",437,"タン"],["ふわタン",987,"タン"],["ねぎタン",987,"タン"],
-["豚カルビ",437,"焼肉"],["鶏せせり",437,"焼肉"],["鶏かしわ",437,"焼肉"],["上ハラミ",768,"焼肉"],["黒毛トロカルビ",658,"焼肉"],["飛騨牛ユッケ",1097,"焼肉"],["とろける肉寿司（1貫）",327,"焼肉"],["生センマイ",658,"ホルモン"],["ぼたんの心臓（ハツ）",327,"ホルモン"],["歯応えポッポ（コリコリ）",327,"ホルモン"],["大人のホルモン",547,"ホルモン"],["赤辛ホルモン",547,"ホルモン"],["玄人好みの焼きレバー",327,"ホルモン"],
-["コーンバター",327,"おつまみ"],["酒場枝豆",327,"おつまみ"],["韓国のり",217,"おつまみ"],["昔のウインナー",327,"おつまみ"],["にんにくホイル焼",327,"おつまみ"],["焼野菜盛り",658,"おつまみ"],["焼野菜単品",327,"おつまみ"],
-["コールドストーンパフェ",658,"〆・デザート"],["アイス各種",220,"〆・デザート"],["ぼたん冷麺",658,"〆・デザート"],["大垣ラーメン",658,"〆・デザート"],["玉子スープ",437,"〆・デザート"],["赤出汁",327,"〆・デザート"],["石焼ビビンバ",658,"〆・デザート"],["焼肉専用TKG",547,"〆・デザート"],["ガーリックバターライス",658,"〆・デザート"],["白ごはん（小）",217,"〆・デザート"],["白ごはん（中）",327,"〆・デザート"],["白ごはん（大）",437,"〆・デザート"],
-["単品キムチ",327,"サラダ・野菜"],["単品もやし",327,"サラダ・野菜"],["一本きゅうり",327,"サラダ・野菜"],["塩ダレキャベツ",327,"サラダ・野菜"],["ナムル盛り",547,"サラダ・野菜"],["キムチ盛り",547,"サラダ・野菜"],["シーザーサラダ",658,"サラダ・野菜"],["チョレギサラダ",547,"サラダ・野菜"],
-["神泡のザ・プレミアム・モルツ（中）",0,"ビール",329],["神泡のザ・プレミアム・モルツ（大）",0,"ビール",659],["アサヒスーパードライ（瓶）",0,"ビール",439],["オールフリー",0,"ビール",439],
-["ジムビームハイボール",0,"ハイボール",329],["メガ ジムビームハイボール",0,"ハイボール",549],["角ハイボール",0,"ハイボール",439],["知多 風香るハイボール",0,"ハイボール",769],
-["こだわり酒場のタコハイ",0,"サワー",329],["こだわり酒場のレモンサワー",0,"サワー",329],["瀬戸内レモンサワー",0,"サワー",439],["瀬戸内レモンサワー おかわり",0,"サワー",329],["メガ 瀬戸内レモンサワー",0,"サワー",659],["メガ サワーおかわり",0,"サワー",549],["黒ウーロンハイ",0,"サワー",439],
-["焼酎〈麦〉いいちこ",0,"焼酎・日本酒",439],["焼酎〈芋〉黒霧島",0,"焼酎・日本酒",439],["日本酒 酔鯨",0,"焼酎・日本酒",549],["日本酒 熱燗（一合）",0,"焼酎・日本酒",439],["日本酒 熱燗（二合）",0,"焼酎・日本酒",769],["梅酒「梅酒にしませんか」",0,"焼酎・日本酒",439],["マッコリ（グラス）",0,"焼酎・日本酒",439],["やかんマッコリ",0,"焼酎・日本酒",2199],
-["グラスワイン〈赤〉",0,"カクテル・ワイン",439],["カシスオレンジ",0,"カクテル・ワイン",439],["カシスソーダ",0,"カクテル・ワイン",439],["カシスウーロン",0,"カクテル・ワイン",439],["ピーチウーロン",0,"カクテル・ワイン",439],["ピーチフィズ",0,"カクテル・ワイン",439],["ファジーネーブル",0,"カクテル・ワイン",439],
-["黒ウーロン",0,"ソフトドリンク",219],["コーラ",0,"ソフトドリンク",219],["カルピスソーダ",0,"ソフトドリンク",219],["メロンソーダ",0,"ソフトドリンク",219],["カルピス",0,"ソフトドリンク",219],["ジンジャーエール",0,"ソフトドリンク",219],["オレンジジュース",0,"ソフトドリンク",219],["ラムネ",0,"ソフトドリンク",219]
+{id:"special_tan",name:"極上厚切り牛タン",net:1298,gross:1428,cat:"本日の特選"},
+{id:"special_mino",name:"やみつき上ミノ",net:798,gross:878,cat:"本日の特選"},
+{id:"special_hida_karubi",name:"飛騨牛特上霜降りカルビ",net:1298,gross:1428,cat:"本日の特選"},
+{id:"special_hida_akami",name:"飛騨牛特上赤身ロース",net:1298,gross:1428,cat:"本日の特選"},
+{id:"special_hida_yukke",name:"飛騨牛レアステーキユッケ",net:998,gross:1098,cat:"本日の特選"},
+{id:"aka",name:"名物アカ",net:398,gross:437,cat:"ホルモン"},
+{id:"shiro",name:"名物シロ",net:398,gross:437,cat:"ホルモン"},
+{id:"maboroshi_tan",name:"ぼたん幻のタン",net:498,gross:547,cat:"タン"},
+{id:"atsugiri_tan",name:"厚切りタン",net:1298,gross:1428,cat:"タン"},
+{id:"kori_tan",name:"コリコリタン",net:398,gross:437,cat:"タン"},
+{id:"fuwa_tan",name:"ふわタン",net:898,gross:987,cat:"タン"},
+{id:"negi_tan",name:"ねぎタン",net:898,gross:987,cat:"タン"},
+{id:"buta_karubi",name:"豚カルビ",net:398,gross:437,cat:"焼肉"},
+{id:"tori_seseri",name:"鶏せせり",net:398,gross:437,cat:"焼肉"},
+{id:"tori_kashiwa",name:"鶏かしわ",net:398,gross:437,cat:"焼肉"},
+{id:"jou_harami",name:"上ハラミ",net:698,gross:768,cat:"焼肉"},
+{id:"kuroge_toro",name:"黒毛トロカルビ",net:598,gross:658,cat:"焼肉"},
+{id:"hida_yukke",name:"飛騨牛ユッケ",net:998,gross:1097,cat:"焼肉"},
+{id:"niku_sushi",name:"とろける肉寿司（1貫）",net:298,gross:327,cat:"焼肉"},
+{id:"nama_senmai",name:"生センマイ",net:598,gross:658,cat:"ホルモン"},
+{id:"heart",name:"ぼたんの心臓（ハツ）",net:298,gross:327,cat:"ホルモン"},
+{id:"kori",name:"歯応えポッポ（コリコリ）",net:398,gross:437,cat:"ホルモン"},
+{id:"adult_horumon",name:"大人のホルモン",net:498,gross:547,cat:"ホルモン"},
+{id:"spicy_horumon",name:"赤辛ホルモン",net:498,gross:547,cat:"ホルモン"},
+{id:"liver",name:"玄人好みの焼きレバー",net:298,gross:327,cat:"ホルモン"},
+{id:"corn_butter",name:"コーンバター",net:298,gross:327,cat:"おつまみ"},
+{id:"edamame",name:"酒場枝豆",net:298,gross:327,cat:"おつまみ"},
+{id:"korean_nori",name:"韓国のり",net:198,gross:217,cat:"おつまみ"},
+{id:"sausage",name:"昔のウインナー",net:298,gross:327,cat:"おつまみ"},
+{id:"garlic_foil",name:"にんにくホイル焼",net:298,gross:327,cat:"おつまみ"},
+{id:"veg_mix",name:"焼野菜盛り",net:598,gross:658,cat:"おつまみ"},
+{id:"veg_single",name:"焼野菜単品",net:298,gross:327,cat:"おつまみ"},
+{id:"coldstone",name:"コールドストーンパフェ",net:598,gross:658,cat:"〆・デザート"},
+{id:"ice",name:"アイス各種",net:200,gross:220,cat:"〆・デザート"},
+{id:"reimen",name:"ぼたん冷麺",net:598,gross:658,cat:"〆・デザート"},
+{id:"ogaki_ramen",name:"大垣ラーメン",net:598,gross:658,cat:"〆・デザート"},
+{id:"egg_soup",name:"玉子スープ",net:398,gross:437,cat:"〆・デザート"},
+{id:"akadashi",name:"赤出汁",net:298,gross:327,cat:"〆・デザート"},
+{id:"bibimbap",name:"石焼ビビンバ",net:598,gross:658,cat:"〆・デザート"},
+{id:"tkg",name:"焼肉専用TKG",net:498,gross:547,cat:"〆・デザート"},
+{id:"garlic_rice",name:"ガーリックバターライス",net:598,gross:658,cat:"〆・デザート"},
+{id:"rice_s",name:"白ごはん（小）",net:198,gross:217,cat:"〆・デザート"},
+{id:"rice_m",name:"白ごはん（中）",net:298,gross:327,cat:"〆・デザート"},
+{id:"rice_l",name:"白ごはん（大）",net:398,gross:437,cat:"〆・デザート"},
+{id:"kimchi",name:"単品キムチ",net:298,gross:327,cat:"サラダ・野菜"},
+{id:"moyashi",name:"単品もやし",net:298,gross:327,cat:"サラダ・野菜"},
+{id:"kyuri",name:"一本きゅうり",net:298,gross:327,cat:"サラダ・野菜"},
+{id:"cabbage",name:"塩ダレキャベツ",net:298,gross:327,cat:"サラダ・野菜"},
+{id:"namul_mix",name:"ナムル盛り",net:498,gross:547,cat:"サラダ・野菜"},
+{id:"kimchi_mix",name:"キムチ盛り",net:498,gross:547,cat:"サラダ・野菜"},
+{id:"caesar",name:"シーザーサラダ",net:598,gross:658,cat:"サラダ・野菜"},
+{id:"choregi",name:"チョレギサラダ",net:498,gross:547,cat:"サラダ・野菜"},
+{id:"premium_malts_m",name:"神泡のザ・プレミアム・モルツ（中）",net:299,gross:329,cat:"ビール",included:true},
+{id:"premium_malts_l",name:"神泡のザ・プレミアム・モルツ（大）",net:599,gross:659,cat:"ビール",included:true},
+{id:"asahi_superdry_bottle",name:"アサヒスーパードライ（瓶）",net:399,gross:439,cat:"ビール",included:true},
+{id:"all_free",name:"オールフリー",net:399,gross:439,cat:"ビール",included:true},
+{id:"jim_beam",name:"ジムビームハイボール",net:299,gross:329,cat:"ハイボール",included:true},
+{id:"jim_beam_mega",name:"メガ ジムビームハイボール",net:499,gross:549,cat:"ハイボール",included:true},
+{id:"kaku_highball",name:"角ハイボール",net:399,gross:439,cat:"ハイボール",included:true},
+{id:"chita_highball",name:"知多 風香るハイボール",net:699,gross:769,cat:"ハイボール",included:true},
+{id:"tako_high",name:"こだわり酒場のタコハイ",net:299,gross:329,cat:"サワー",included:true},
+{id:"lemon_sour",name:"こだわり酒場のレモンサワー",net:299,gross:329,cat:"サワー",included:true},
+{id:"setouchi_lemon",name:"瀬戸内レモンサワー",net:399,gross:439,cat:"サワー",included:true},
+{id:"setouchi_lemon_refill",name:"瀬戸内レモンサワー おかわり",net:299,gross:329,cat:"サワー",included:true},
+{id:"setouchi_lemon_mega",name:"メガ 瀬戸内レモンサワー",net:599,gross:659,cat:"サワー",included:true},
+{id:"sour_refill_mega",name:"メガ サワーおかわり",net:499,gross:549,cat:"サワー",included:true},
+{id:"black_oolong_high",name:"黒ウーロンハイ",net:399,gross:439,cat:"サワー",included:true},
+{id:"shochu_iichiko",name:"焼酎〈麦〉いいちこ",net:399,gross:439,cat:"焼酎・日本酒",included:true},
+{id:"shochu_kurokirishima",name:"焼酎〈芋〉黒霧島",net:399,gross:439,cat:"焼酎・日本酒",included:true},
+{id:"sake_suigei",name:"日本酒 酔鯨",net:499,gross:549,cat:"焼酎・日本酒",included:true},
+{id:"atsukan_1",name:"日本酒 熱燗（一合）",net:399,gross:439,cat:"焼酎・日本酒",included:true},
+{id:"atsukan_2",name:"日本酒 熱燗（二合）",net:699,gross:769,cat:"焼酎・日本酒",included:true},
+{id:"umeshu",name:"梅酒「梅酒にしませんか」",net:399,gross:439,cat:"焼酎・日本酒",included:true},
+{id:"makkori_glass",name:"マッコリ（グラス）",net:399,gross:439,cat:"焼酎・日本酒",included:true},
+{id:"makkori_yakan",name:"やかんマッコリ",net:1999,gross:2199,cat:"焼酎・日本酒",included:true},
+{id:"wine_red",name:"グラスワイン〈赤〉",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"cassis_orange",name:"カシスオレンジ",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"cassis_soda",name:"カシスソーダ",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"cassis_oolong",name:"カシスウーロン",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"peach_oolong",name:"ピーチウーロン",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"peach_fizz",name:"ピーチフィズ",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"fuzzy_navel",name:"ファジーネーブル",net:399,gross:439,cat:"カクテル・ワイン",included:true},
+{id:"soft_black_oolong",name:"黒ウーロン",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_cola",name:"コーラ",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_calpis_soda",name:"カルピスソーダ",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_melon_soda",name:"メロンソーダ",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_calpis",name:"カルピス",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_ginger_ale",name:"ジンジャーエール",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_orange",name:"オレンジジュース",net:199,gross:219,cat:"ソフトドリンク",included:true},
+{id:"soft_ramune",name:"ラムネ",net:199,gross:219,cat:"ソフトドリンク",included:true}
 ];
-var CATS=["すべて","本日の特選","焼肉","タン","ホルモン","おつまみ","サラダ・野菜","〆・デザート","ビール","ハイボール","サワー","焼酎・日本酒","カクテル・ワイン","ソフトドリンク"];
+
+var CATS=["すべて","★お気に入り","本日の特選","焼肉","タン","ホルモン","おつまみ","サラダ・野菜","〆・デザート","ビール","ハイボール","サワー","焼酎・日本酒","カクテル・ワイン","ソフトドリンク"];
 var KEY="botan_order_counter_v1_1";
-var def={sessionStart:null,adultCount:1,childCount:0,adultBase:659,otoshi:330,childBase:275,adultExt:439,childExt:165,extCount:0,minutes:60,includeBase:true,orders:[]};
+var def={
+sessionStart:null,adultCount:1,childCount:0,
+adultBaseNet:599,otoshiNet:300,childBaseNet:250,
+adultExtNet:399,childExtNet:150,extCount:0,minutes:60,includeBase:true,
+taxRate:10,taxRounding:"round",
+couponEnabled:false,couponMinGross:0,couponDiscountNet:0,
+favorites:[],priceOverrides:{},orders:[]
+};
 var st=load(),cat="すべて",filter="all",view="order",toastTimer=null;
+
 function $(id){return document.getElementById(id)}
-function load(){try{var x=JSON.parse(localStorage.getItem(KEY)||"null");if(!x)return Object.assign({},def);var n=Object.assign({},def,x);if(typeof x.adultCount!=="number"&&typeof x.partySize==="number")n.adultCount=x.partySize;if(typeof x.baseCharge==="number")n.adultBase=x.baseCharge;if(typeof x.otoshiCharge==="number")n.otoshi=x.otoshiCharge;if(typeof x.childBaseCharge==="number")n.childBase=x.childBaseCharge;if(typeof x.extensionCharge==="number")n.adultExt=x.extensionCharge;if(typeof x.childExtensionCharge==="number")n.childExt=x.childExtensionCharge;if(typeof x.extensionCount==="number")n.extCount=x.extensionCount;if(typeof x.timerMinutes==="number")n.minutes=x.timerMinutes;if(typeof x.autoBaseCharge==="boolean")n.includeBase=x.autoBaseCharge;n.orders=Array.isArray(x.orders)?x.orders:[];return n}catch(e){return Object.assign({},def)}}
+function num(v,d){var n=Number(v);return isFinite(n)?n:d}
+function guessNet(g){return Math.round(num(g,0)/1.1)}
+function load(){
+ try{
+  var x=JSON.parse(localStorage.getItem(KEY)||"null");
+  if(!x)return clone(def);
+  var n=Object.assign(clone(def),x);
+  if(typeof x.adultCount!=="number"&&typeof x.partySize==="number")n.adultCount=x.partySize;
+  if(typeof x.adultBaseNet!=="number"&&typeof x.adultBase==="number")n.adultBaseNet=guessNet(x.adultBase);
+  if(typeof x.otoshiNet!=="number"&&typeof x.otoshi==="number")n.otoshiNet=guessNet(x.otoshi);
+  if(typeof x.childBaseNet!=="number"&&typeof x.childBase==="number")n.childBaseNet=guessNet(x.childBase);
+  if(typeof x.adultExtNet!=="number"&&typeof x.adultExt==="number")n.adultExtNet=guessNet(x.adultExt);
+  if(typeof x.childExtNet!=="number"&&typeof x.childExt==="number")n.childExtNet=guessNet(x.childExt);
+  if(typeof x.extensionCount==="number"&&typeof x.extCount!=="number")n.extCount=x.extensionCount;
+  if(typeof x.timerMinutes==="number"&&typeof x.minutes!=="number")n.minutes=x.timerMinutes;
+  if(typeof x.autoBaseCharge==="boolean"&&typeof x.includeBase!=="boolean")n.includeBase=x.autoBaseCharge;
+  n.orders=Array.isArray(x.orders)?x.orders:[];
+  n.favorites=Array.isArray(x.favorites)?x.favorites:[];
+  n.priceOverrides=x.priceOverrides&&typeof x.priceOverrides==="object"?x.priceOverrides:{};
+  return n;
+ }catch(e){return clone(def)}
+}
+function clone(o){return JSON.parse(JSON.stringify(o))}
 function save(){localStorage.setItem(KEY,JSON.stringify(st))}
-function yen(n){return new Intl.NumberFormat("ja-JP").format(Math.round(n))+"円"}
+function yen(n){return new Intl.NumberFormat("ja-JP").format(Math.round(num(n,0)))+"円"}
 function pad(n){return String(n).padStart(2,"0")}
-function mmss(s){s=Math.max(0,Math.floor(s));return pad(Math.floor(s/60))+":"+pad(s%60)}
+function mmss(s){s=Math.max(0,Math.floor(num(s,0)));return pad(Math.floor(s/60))+":"+pad(s%60)}
+function taxAmount(net){
+ var v=num(net,0)*num(st.taxRate,10)/100;
+ if(st.taxRounding==="floor")return Math.floor(v);
+ if(st.taxRounding==="ceil")return Math.ceil(v);
+ return Math.round(v);
+}
+function grossFromNet(net){net=Math.max(0,Math.round(num(net,0)));return net+taxAmount(net)}
 function elapsed(){return st.sessionStart?Math.max(0,Math.floor((Date.now()-st.sessionStart)/1000)):0}
 function activeOrders(){return st.orders.filter(function(o){return !o.cancelled})}
 function pendingOrders(){return activeOrders().filter(function(o){return !o.servedAt})}
-function total(){var items=activeOrders().reduce(function(a,o){return a+o.price},0);var base=st.includeBase?(st.adultCount*st.adultBase+st.childCount*st.childBase):0;var ot=st.adultCount*st.otoshi;var ext=st.extCount*(st.adultCount*st.adultExt+st.childCount*st.childExt);return items+base+ot+ext}
+function menuPrice(m){
+ var o=st.priceOverrides[m.id]||{};
+ return {net:typeof o.net==="number"?o.net:m.net,gross:typeof o.gross==="number"?o.gross:m.gross};
+}
+function orderNet(o){
+ if(typeof o.netPrice==="number")return o.netPrice;
+ if(o.included)return 0;
+ if(typeof o.price==="number")return guessNet(o.price);
+ return 0;
+}
+function calc(){
+ var itemsNet=activeOrders().reduce(function(a,o){return a+orderNet(o)},0);
+ var baseNet=st.includeBase?(st.adultCount*st.adultBaseNet+st.childCount*st.childBaseNet):0;
+ var otoshi=st.adultCount*st.otoshiNet;
+ var extension=st.extCount*(st.adultCount*st.adultExtNet+st.childCount*st.childExtNet);
+ var subtotalNet=Math.max(0,Math.round(itemsNet+baseNet+otoshi+extension));
+ var beforeCouponGross=subtotalNet+taxAmount(subtotalNet);
+ var couponApplied=!!st.couponEnabled&&num(st.couponDiscountNet,0)>0&&beforeCouponGross>=num(st.couponMinGross,0);
+ var discountNet=couponApplied?Math.min(subtotalNet,Math.round(num(st.couponDiscountNet,0))):0;
+ var taxableNet=subtotalNet-discountNet;
+ var tax=taxAmount(taxableNet);
+ return {itemsNet:itemsNet,baseNet:baseNet,otoshi:otoshi,extension:extension,subtotalNet:subtotalNet,beforeCouponGross:beforeCouponGross,couponApplied:couponApplied,discountNet:discountNet,taxableNet:taxableNet,tax:tax,total:taxableNet+tax};
+}
 function toast(t){$("toast").textContent=t;$("toast").classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){$("toast").classList.remove("show")},1300)}
-function renderTabs(){$("tabs").innerHTML=CATS.map(function(c){return '<button class="tab '+(c===cat?'active':'')+'" data-cat="'+c+'">'+c+'</button>'}).join("");document.querySelectorAll("[data-cat]").forEach(function(b){b.onclick=function(){cat=b.dataset.cat;renderTabs();renderMenu()}})}
-function renderMenu(){var q=$("search").value.trim().toLowerCase();var a=MENU.filter(function(m){return (cat==="すべて"||m[2]===cat)&&(!q||m[0].toLowerCase().indexOf(q)>=0)});$("sectionTitle").textContent=cat==="すべて"?"すべての商品":cat;$("grid").innerHTML=a.map(function(m){var i=MENU.indexOf(m);var txt=m[1]===0?"飲み放題":yen(m[1]);var hint=m[1]===0?(m[3]?"通常 "+yen(m[3]):"記録のみ"):"税込";return '<button class="menu" data-menu="'+i+'"><div class="menuName">'+m[0]+'</div><div class="menuPrice '+(m[1]===0?'free':'')+'">'+txt+'<span class="hint">'+hint+'</span></div></button>'}).join("")||'<div class="empty">該当商品なし</div>';document.querySelectorAll("[data-menu]").forEach(function(b){b.onclick=function(){addOrder(Number(b.dataset.menu))}})}
-function addOrder(i){if(!st.sessionStart){toast("先にタイマーをスタートしてください");return}var m=MENU[i],now=Date.now(),e=Math.max(0,Math.floor((now-st.sessionStart)/1000));st.orders.push({id:now.toString(36)+Math.random().toString(36).slice(2,7),name:m[0],price:m[1],createdAt:now,elapsedSec:e,servedAt:null,cancelled:false});save();renderSummary();renderHistory();if(navigator.vibrate)navigator.vibrate(25);toast(mmss(e)+" "+m[0]+" を追加")}
-function renderSummary(){$("total").textContent=yen(total());$("count").textContent=activeOrders().length+"品";$("pending").textContent=pendingOrders().length+"品";var p=pendingOrders().length;$("badge").style.display=p?"inline-block":"none";$("badge").textContent=p}
-function renderTimer(){var e=elapsed(),limit=(st.minutes+st.extCount*30)*60,rem=limit-e,r=$("remaining");$("elapsed").textContent=mmss(e);r.className="timerValue";if(!st.sessionStart)r.textContent=mmss(limit);else if(rem>=0){r.textContent=mmss(rem);if(rem<=300)r.classList.add("danger");else if(rem<=900)r.classList.add("warn")}else{r.textContent="+"+mmss(-rem);r.classList.add("danger")}if(st.sessionStart){var d=new Date(st.sessionStart),x=st.extCount?" ・ 延長"+st.extCount+"回（合計"+(st.minutes+st.extCount*30)+"分）":"";$("startSub").textContent=pad(d.getHours())+":"+pad(d.getMinutes())+" 開始"+x;$("start").textContent="進行中";$("start").disabled=true;$("extend").disabled=false}else{$("startSub").textContent="開始したらタイマーをスタート";$("start").textContent="スタート";$("start").disabled=false;$("extend").disabled=true}$("extend").textContent="＋30分延長（大人"+yen(st.adultExt)+" / 子供"+yen(st.childExt)+"）"}
-function renderHistory(){var now=Date.now(),a=st.orders.slice().sort(function(x,y){return x.createdAt-y.createdAt});if(filter==="pending")a=a.filter(function(o){return !o.cancelled&&!o.servedAt});if(filter==="served")a=a.filter(function(o){return !o.cancelled&&o.servedAt});$("history").innerHTML=a.map(function(o){var served=!!o.servedAt,w=Math.max(0,Math.floor(((served?o.servedAt:now)-o.createdAt)/1000));return '<div class="item '+(served?'served ':'')+(o.cancelled?'cancelled':'')+'"><div class="top"><div class="time">'+mmss(o.elapsedSec||0)+'</div><div class="name">'+o.name+'</div><div class="price">'+(o.price?yen(o.price):"0円")+'</div></div><div class="bottom">'+(o.cancelled?'<span class="wait">取消済み</span>':'<button class="status '+(served?'servedBtn':'pending')+'" data-status="'+o.id+'">'+(served?'✓ 到着済み':'● 未到着')+'</button><div class="wait">'+(served?'注文から '+mmss(w)+' で到着':'注文から '+mmss(w))+'</div><button class="cancel" data-cancel="'+o.id+'">取消</button>')+'</div></div>'}).join("")||'<div class="empty">まだ注文履歴はありません</div>';document.querySelectorAll("[data-status]").forEach(function(b){b.onclick=function(){var o=st.orders.find(function(x){return x.id===b.dataset.status});o.servedAt=o.servedAt?null:Date.now();save();renderSummary();renderHistory()}});document.querySelectorAll("[data-cancel]").forEach(function(b){b.onclick=function(){var o=st.orders.find(function(x){return x.id===b.dataset.cancel});o.cancelled=true;save();renderSummary();renderHistory();toast("注文を取消しました")}})}
-function sync(){for(var i=0;i<=10;i++){if(!$("adult").options[i]){$("adult").add(new Option(i+"人",i));$("child").add(new Option(i+"人",i))}}$("adult").value=st.adultCount;$("child").value=st.childCount;$("adultBase").value=st.adultBase;$("otoshi").value=st.otoshi;$("childBase").value=st.childBase;$("adultExt").value=st.adultExt;$("childExt").value=st.childExt;$("minutes").value=st.minutes;$("includeBase").checked=st.includeBase;if(st.sessionStart){var d=new Date(st.sessionStart);$("startTime").value=pad(d.getHours())+":"+pad(d.getMinutes())}}
-function readSettings(){st.adultCount=Number($("adult").value)||0;st.childCount=Number($("child").value)||0;st.adultBase=Number($("adultBase").value)||0;st.otoshi=Number($("otoshi").value)||0;st.childBase=Number($("childBase").value)||0;st.adultExt=Number($("adultExt").value)||0;st.childExt=Number($("childExt").value)||0;st.minutes=Math.max(1,Number($("minutes").value)||60);st.includeBase=$("includeBase").checked;save();renderSummary();renderTimer()}
-function open(id){$(id).classList.add("open")}function close(id){$(id).classList.remove("open")}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+
+function renderTabs(){
+ $("tabs").innerHTML=CATS.map(function(c){return '<button class="tab '+(c===cat?'active':'')+'" data-cat="'+esc(c)+'">'+esc(c)+'</button>'}).join("");
+ document.querySelectorAll("[data-cat]").forEach(function(b){b.onclick=function(){cat=b.dataset.cat;renderTabs();renderMenu()}});
+}
+function renderMenu(){
+ var q=$("search").value.trim().toLowerCase();
+ var a=MENU.filter(function(m){
+  var catOk=cat==="すべて"||(cat==="★お気に入り"?st.favorites.indexOf(m.id)>=0:m.cat===cat);
+  return catOk&&(!q||m.name.toLowerCase().indexOf(q)>=0);
+ });
+ $("sectionTitle").textContent=cat==="すべて"?"すべての商品":cat;
+ $("grid").innerHTML=a.map(function(m){
+  var p=menuPrice(m),fav=st.favorites.indexOf(m.id)>=0;
+  var txt=m.included?"飲み放題":yen(p.gross);
+  var hint=m.included?"通常 "+yen(p.gross):"税込";
+  return '<div class="menuCard"><button class="favBtn '+(fav?'on':'')+'" data-fav="'+esc(m.id)+'" aria-label="お気に入り">'+(fav?'★':'☆')+'</button><button class="menu" data-menu="'+esc(m.id)+'"><div class="menuName">'+esc(m.name)+'</div><div class="menuPrice '+(m.included?'free':'')+'">'+txt+'<span class="hint">'+hint+'</span></div></button></div>';
+ }).join("")||'<div class="empty" style="grid-column:1/-1">該当商品なし</div>';
+ document.querySelectorAll("[data-menu]").forEach(function(b){b.onclick=function(){addOrder(b.dataset.menu)}});
+ document.querySelectorAll("[data-fav]").forEach(function(b){b.onclick=function(e){e.stopPropagation();toggleFav(b.dataset.fav)}});
+}
+function toggleFav(id){
+ var i=st.favorites.indexOf(id);
+ if(i>=0)st.favorites.splice(i,1);else st.favorites.push(id);
+ save();renderTabs();renderMenu();toast(i>=0?"お気に入りから外しました":"お気に入りに追加しました");
+}
+function addOrder(id){
+ if(!st.sessionStart){toast("先にタイマーをスタートしてください");return}
+ var m=MENU.find(function(x){return x.id===id});if(!m)return;
+ var p=menuPrice(m),now=Date.now(),e=Math.max(0,Math.floor((now-st.sessionStart)/1000));
+ st.orders.push({id:now.toString(36)+Math.random().toString(36).slice(2,7),menuId:m.id,name:m.name,netPrice:m.included?0:p.net,grossPrice:m.included?0:p.gross,included:!!m.included,createdAt:now,elapsedSec:e,servedAt:null,cancelled:false});
+ save();renderSummary();renderHistory();if(navigator.vibrate)navigator.vibrate(25);toast(mmss(e)+" "+m.name+" を追加");
+}
+function renderSummary(){
+ var c=calc();
+ $("total").textContent=yen(c.total);
+ $("count").textContent=activeOrders().length+"品";
+ $("pending").textContent=pendingOrders().length+"品";
+ var p=pendingOrders().length;$("badge").style.display=p?"inline-block":"none";$("badge").textContent=p;
+ var couponText=c.couponApplied?' / クーポン <b>-'+yen(c.discountNet)+'</b>':'';
+ $("breakdown").innerHTML='税別合計 <b>'+yen(c.subtotalNet)+'</b>'+couponText+' / 課税対象 <b>'+yen(c.taxableNet)+'</b> / 消費税 <b>'+yen(c.tax)+'</b>';
+ if($("couponStatus")){
+  $("couponStatus").textContent=st.couponEnabled?(c.couponApplied?"クーポン適用中":"現在は利用条件未達です"):"クーポンOFF";
+ }
+}
+function renderTimer(){
+ var e=elapsed(),limit=(st.minutes+st.extCount*30)*60,rem=limit-e,r=$("remaining");
+ $("elapsed").textContent=mmss(e);r.className="timerValue";
+ if(!st.sessionStart)r.textContent=mmss(limit);
+ else if(rem>=0){r.textContent=mmss(rem);if(rem<=300)r.classList.add("danger");else if(rem<=900)r.classList.add("warn")}
+ else{r.textContent="+"+mmss(-rem);r.classList.add("danger")}
+ if(st.sessionStart){
+  var d=new Date(st.sessionStart),x=st.extCount?" ・ 延長"+st.extCount+"回（合計"+(st.minutes+st.extCount*30)+"分）":"";
+  $("startSub").textContent=pad(d.getHours())+":"+pad(d.getMinutes())+" 開始"+x;
+  $("start").textContent="進行中";$("start").disabled=true;$("extend").disabled=false;
+ }else{
+  $("startSub").textContent="開始したらタイマーをスタート";$("start").textContent="スタート";$("start").disabled=false;$("extend").disabled=true;
+ }
+ $("extendPrice").textContent="大人"+yen(grossFromNet(st.adultExtNet))+" / 子供"+yen(grossFromNet(st.childExtNet))+"（税込）";
+}
+function renderHistory(){
+ var now=Date.now(),a=st.orders.slice().sort(function(x,y){return x.createdAt-y.createdAt});
+ if(filter==="pending")a=a.filter(function(o){return !o.cancelled&&!o.servedAt});
+ if(filter==="served")a=a.filter(function(o){return !o.cancelled&&o.servedAt});
+ $("history").innerHTML=a.map(function(o){
+  var served=!!o.servedAt,w=Math.max(0,Math.floor(((served?o.servedAt:now)-o.createdAt)/1000));
+  var price=o.included?"飲み放題":yen(typeof o.grossPrice==="number"?o.grossPrice:(typeof o.price==="number"?o.price:grossFromNet(orderNet(o))));
+  return '<div class="item '+(served?'served ':'')+(o.cancelled?'cancelled':'')+'"><div class="top"><div class="time">'+mmss(o.elapsedSec||0)+'</div><div class="name">'+esc(o.name)+'</div><div class="price">'+price+'</div></div><div class="bottom">'+(o.cancelled?'<span class="wait">取消済み</span>':'<button class="status '+(served?'servedBtn':'pending')+'" data-status="'+esc(o.id)+'">'+(served?'✓ 到着済み':'● 未到着')+'</button><div class="wait">'+(served?'注文から '+mmss(w)+' で到着':'注文から '+mmss(w))+'</div><button class="cancel" data-cancel="'+esc(o.id)+'">取消</button>')+'</div></div>';
+ }).join("")||'<div class="empty">まだ注文履歴はありません</div>';
+ document.querySelectorAll("[data-status]").forEach(function(b){b.onclick=function(){var o=st.orders.find(function(x){return x.id===b.dataset.status});if(!o)return;o.servedAt=o.servedAt?null:Date.now();save();renderSummary();renderHistory()}});
+ document.querySelectorAll("[data-cancel]").forEach(function(b){b.onclick=function(){var o=st.orders.find(function(x){return x.id===b.dataset.cancel});if(!o)return;o.cancelled=true;save();renderSummary();renderHistory();toast("注文を取消しました")}});
+}
+
+function sync(){
+ if(!$("adult").options.length){for(var i=0;i<=10;i++){$("adult").add(new Option(i+"人",i));$("child").add(new Option(i+"人",i))}}
+ $("adult").value=st.adultCount;$("child").value=st.childCount;
+ $("adultBaseNet").value=st.adultBaseNet;$("otoshiNet").value=st.otoshiNet;$("childBaseNet").value=st.childBaseNet;
+ $("adultExtNet").value=st.adultExtNet;$("childExtNet").value=st.childExtNet;
+ $("minutes").value=st.minutes;$("includeBase").checked=st.includeBase;
+ $("taxRate").value=st.taxRate;$("taxRounding").value=st.taxRounding;
+ $("couponEnabled").checked=st.couponEnabled;$("couponMinGross").value=st.couponMinGross;$("couponDiscountNet").value=st.couponDiscountNet;
+ if(st.sessionStart){var d=new Date(st.sessionStart);$("startTime").value=pad(d.getHours())+":"+pad(d.getMinutes())}
+ renderPriceEditor();
+ renderSummary();
+}
+function readSettings(){
+ st.adultCount=Math.max(0,num($("adult").value,0));st.childCount=Math.max(0,num($("child").value,0));
+ st.adultBaseNet=Math.max(0,Math.round(num($("adultBaseNet").value,599)));
+ st.otoshiNet=Math.max(0,Math.round(num($("otoshiNet").value,300)));
+ st.childBaseNet=Math.max(0,Math.round(num($("childBaseNet").value,250)));
+ st.adultExtNet=Math.max(0,Math.round(num($("adultExtNet").value,399)));
+ st.childExtNet=Math.max(0,Math.round(num($("childExtNet").value,150)));
+ st.minutes=Math.max(1,num($("minutes").value,60));st.includeBase=$("includeBase").checked;
+ st.taxRate=Math.max(0,num($("taxRate").value,10));st.taxRounding=$("taxRounding").value;
+ st.couponEnabled=$("couponEnabled").checked;st.couponMinGross=Math.max(0,Math.round(num($("couponMinGross").value,0)));st.couponDiscountNet=Math.max(0,Math.round(num($("couponDiscountNet").value,0)));
+ save();renderSummary();renderTimer();
+}
+function renderPriceEditor(){
+ var q=($("priceSearch")?$("priceSearch").value:"").trim().toLowerCase();
+ var a=MENU.filter(function(m){return !q||m.name.toLowerCase().indexOf(q)>=0});
+ $("priceList").innerHTML=a.map(function(m){
+  var p=menuPrice(m);
+  return '<div class="priceRow"><div class="priceName">'+esc(m.name)+(m.included?' <span class="hint">飲み放題内・通常価格</span>':'')+'</div><div class="priceInputs"><label>税別<input type="number" min="0" data-net="'+esc(m.id)+'" value="'+p.net+'"></label><label>税込表示<input type="number" min="0" data-gross="'+esc(m.id)+'" value="'+p.gross+'"></label></div></div>';
+ }).join("");
+ document.querySelectorAll("[data-net]").forEach(function(inp){inp.onchange=function(){var id=inp.dataset.net,m=MENU.find(function(x){return x.id===id});if(!m)return;var net=Math.max(0,Math.round(num(inp.value,m.net)));var o=st.priceOverrides[id]||{};o.net=net;o.gross=grossFromNet(net);st.priceOverrides[id]=o;save();renderPriceEditor();renderMenu();toast("価格を更新しました")}});
+ document.querySelectorAll("[data-gross]").forEach(function(inp){inp.onchange=function(){var id=inp.dataset.gross,m=MENU.find(function(x){return x.id===id});if(!m)return;var o=st.priceOverrides[id]||{};o.net=typeof o.net==="number"?o.net:m.net;o.gross=Math.max(0,Math.round(num(inp.value,m.gross)));st.priceOverrides[id]=o;save();renderMenu();toast("税込表示を更新しました")}});
+}
+function open(id){$(id).classList.add("open")}
+function close(id){$(id).classList.remove("open")}
 function switchView(v){view=v;$("orderView").style.display=v==="order"?"block":"none";$("historyView").style.display=v==="history"?"block":"none";$("navOrder").classList.toggle("active",v==="order");$("navHistory").classList.toggle("active",v==="history");if(v==="history")renderHistory()}
+
 $("start").onclick=function(){if(!st.sessionStart){st.sessionStart=Date.now();save();renderTimer();renderSummary();toast("60分タイマーを開始しました")}};
-$("extend").onclick=function(){if(!st.sessionStart)return;var a=st.adultCount*st.adultExt,c=st.childCount*st.childExt,t=a+c;if(confirm("30分延長しますか？\n大人 "+st.adultCount+"人 × "+yen(st.adultExt)+" = "+yen(a)+"\n子供 "+st.childCount+"人 × "+yen(st.childExt)+" = "+yen(c)+"\n合計 "+yen(t)+" を追加します。")){st.extCount++;save();renderTimer();renderSummary();toast("30分延長しました（＋"+yen(t)+"）")}};
-$("search").oninput=renderMenu;$("gear").onclick=function(){sync();open("settings")};document.querySelectorAll("[data-close]").forEach(function(b){b.onclick=function(){close(b.dataset.close)}});["adult","child","adultBase","otoshi","childBase","adultExt","childExt","minutes","includeBase"].forEach(function(id){$(id).onchange=readSettings});
-$("applyTime").onclick=function(){var v=$("startTime").value;if(!v){toast("時刻を選んでください");return}var p=v.split(":"),d=new Date();d.setHours(Number(p[0]),Number(p[1]),0,0);if(d.getTime()>Date.now()+60000)d.setDate(d.getDate()-1);st.sessionStart=d.getTime();st.orders.forEach(function(o){o.elapsedSec=Math.max(0,Math.floor((o.createdAt-st.sessionStart)/1000))});save();renderTimer();renderHistory();close("settings");toast("開始時刻を変更しました")};
-$("reset").onclick=function(){if(confirm("タイマー・注文履歴・到着状況をすべてリセットしますか？")){st=Object.assign({},def,{adultCount:st.adultCount,childCount:st.childCount,adultBase:st.adultBase,otoshi:st.otoshi,childBase:st.childBase,adultExt:st.adultExt,childExt:st.childExt,minutes:st.minutes,includeBase:st.includeBase,orders:[]});save();renderAll();close("settings");toast("今回の注文をリセットしました")}};
-$("navOrder").onclick=function(){switchView("order")};$("navHistory").onclick=function(){switchView("history")};document.querySelectorAll("[data-filter]").forEach(function(b){b.onclick=function(){filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(function(x){x.classList.toggle("active",x===b)});renderHistory()}});
-function renderAll(){sync();renderTabs();renderMenu();renderSummary();renderTimer();renderHistory()}setInterval(function(){renderTimer();if(view==="history")renderHistory()},1000);renderAll();if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){})});
+$("extend").onclick=function(){
+ if(!st.sessionStart)return;
+ var a=st.adultCount*st.adultExtNet,c=st.childCount*st.childExtNet,t=a+c;
+ if(confirm("30分延長しますか？\n大人 "+st.adultCount+"人：税別 "+yen(a)+"\n子供 "+st.childCount+"人：税別 "+yen(c)+"\n税別合計 "+yen(t)+" を追加します。")){
+  st.extCount++;save();renderTimer();renderSummary();toast("30分延長しました");
+ }
+};
+$("search").oninput=renderMenu;
+$("gear").onclick=function(){sync();open("settings")};
+document.querySelectorAll("[data-close]").forEach(function(b){b.onclick=function(){close(b.dataset.close)}});
+["adult","child","adultBaseNet","otoshiNet","childBaseNet","adultExtNet","childExtNet","minutes","includeBase","taxRate","taxRounding","couponEnabled","couponMinGross","couponDiscountNet"].forEach(function(id){$(id).onchange=readSettings});
+$("priceSearch").oninput=renderPriceEditor;
+$("resetPrices").onclick=function(){if(confirm("全商品の価格設定を初期値に戻しますか？")){st.priceOverrides={};save();renderPriceEditor();renderMenu();toast("商品価格を初期値に戻しました")}};
+$("applyTime").onclick=function(){
+ var v=$("startTime").value;if(!v){toast("時刻を選んでください");return}
+ var p=v.split(":"),d=new Date();d.setHours(Number(p[0]),Number(p[1]),0,0);if(d.getTime()>Date.now()+60000)d.setDate(d.getDate()-1);
+ st.sessionStart=d.getTime();st.orders.forEach(function(o){o.elapsedSec=Math.max(0,Math.floor((o.createdAt-st.sessionStart)/1000))});save();renderTimer();renderHistory();close("settings");toast("開始時刻を変更しました");
+};
+$("reset").onclick=function(){
+ if(confirm("タイマー・注文履歴・到着状況をすべてリセットしますか？")){
+  var keep={adultCount:st.adultCount,childCount:st.childCount,adultBaseNet:st.adultBaseNet,otoshiNet:st.otoshiNet,childBaseNet:st.childBaseNet,adultExtNet:st.adultExtNet,childExtNet:st.childExtNet,minutes:st.minutes,includeBase:st.includeBase,taxRate:st.taxRate,taxRounding:st.taxRounding,couponEnabled:st.couponEnabled,couponMinGross:st.couponMinGross,couponDiscountNet:st.couponDiscountNet,favorites:st.favorites,priceOverrides:st.priceOverrides};
+  st=Object.assign(clone(def),keep);save();renderAll();close("settings");toast("今回の注文をリセットしました");
+ }
+};
+$("navOrder").onclick=function(){switchView("order")};$("navHistory").onclick=function(){switchView("history")};
+document.querySelectorAll("[data-filter]").forEach(function(b){b.onclick=function(){filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(function(x){x.classList.toggle("active",x===b)});renderHistory()}});
+
+function renderAll(){sync();renderTabs();renderMenu();renderSummary();renderTimer();renderHistory()}
+setInterval(function(){renderTimer();if(view==="history")renderHistory()},1000);
+renderAll();
+if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){})});
 })();
 </script>
 </body>
