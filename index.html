@@ -84,7 +84,7 @@
 "use strict";
 
 var MENU=[
-{id:"special_tan",name:"極上厚切り牛タン",net:1298,gross:1428,cat:"本日の特選"},
+{id:"special_tan",name:"極上厚切り牛タン",net:1299,gross:1428,cat:"本日の特選"},
 {id:"special_mino",name:"やみつき上ミノ",net:798,gross:878,cat:"本日の特選"},
 {id:"special_hida_karubi",name:"飛騨牛特上霜降りカルビ",net:1298,gross:1428,cat:"本日の特選"},
 {id:"special_hida_akami",name:"飛騨牛特上赤身ロース",net:1298,gross:1428,cat:"本日の特選"},
@@ -92,17 +92,17 @@ var MENU=[
 {id:"aka",name:"名物アカ",net:399,gross:439,cat:"ホルモン"},
 {id:"shiro",name:"名物シロ",net:398,gross:437,cat:"ホルモン"},
 {id:"maboroshi_tan",name:"ぼたん幻のタン",net:499,gross:549,cat:"タン"},
-{id:"atsugiri_tan",name:"厚切りタン",net:1298,gross:1428,cat:"タン"},
+{id:"atsugiri_tan",name:"厚切りタン",net:1299,gross:1428,cat:"タン"},
 {id:"kori_tan",name:"コリコリタン",net:398,gross:437,cat:"タン"},
 {id:"fuwa_tan",name:"ふわタン",net:898,gross:987,cat:"タン"},
 {id:"negi_tan",name:"ねぎタン",net:898,gross:987,cat:"タン"},
 {id:"buta_karubi",name:"豚カルビ",net:398,gross:437,cat:"焼肉"},
-{id:"tori_seseri",name:"鶏せせり",net:398,gross:437,cat:"焼肉"},
+{id:"tori_seseri",name:"鶏せせり",net:399,gross:439,cat:"焼肉"},
 {id:"tori_kashiwa",name:"鶏かしわ",net:398,gross:437,cat:"焼肉"},
 {id:"jou_harami",name:"上ハラミ",net:698,gross:768,cat:"焼肉"},
 {id:"kuroge_toro",name:"黒毛トロカルビ",net:598,gross:658,cat:"焼肉"},
 {id:"hida_yukke",name:"飛騨牛ユッケ",net:998,gross:1097,cat:"焼肉"},
-{id:"niku_sushi",name:"とろける肉寿司（1貫）",net:298,gross:327,cat:"焼肉"},
+{id:"niku_sushi",name:"とろける肉寿司（1貫）",net:299,gross:329,cat:"焼肉"},
 {id:"nama_senmai",name:"生センマイ",net:598,gross:658,cat:"ホルモン"},
 {id:"heart",name:"ぼたんの心臓（ハツ）",net:298,gross:327,cat:"ホルモン"},
 {id:"kori",name:"歯応えポッポ（コリコリ）",net:399,gross:439,cat:"ホルモン"},
@@ -178,10 +178,17 @@ var MENU=[
 {id:"soft_ramune",name:"ラムネ",net:199,gross:219,cat:"ソフトドリンク",included:false}
 ];
 
+var RECEIPT_PRICE_FIXES={
+ special_tan:{oldNet:1298,oldGross:1428,net:1299,gross:1428},
+ atsugiri_tan:{oldNet:1298,oldGross:1428,net:1299,gross:1428},
+ tori_seseri:{oldNet:398,oldGross:437,net:399,gross:439},
+ niku_sushi:{oldNet:298,oldGross:327,net:299,gross:329}
+};
+
 var CATS=["すべて","★お気に入り","本日の特選","焼肉","タン","ホルモン","おつまみ","サラダ・野菜","〆・デザート","ビール","ハイボール","サワー","焼酎・日本酒","カクテル・ワイン","ソフトドリンク"];
 var KEY="botan_order_counter_v1_1";
 var def={
-schemaVersion:18,sessionStart:null,pausedAt:null,totalPausedMs:0,adultCount:1,childCount:0,
+schemaVersion:19,sessionStart:null,pausedAt:null,totalPausedMs:0,adultCount:1,childCount:0,
 adultBaseNet:599,otoshiNet:300,childBaseNet:250,
 adultExtNet:399,childExtNet:150,extCount:0,minutes:60,includeBase:true,
 taxRate:10,taxRounding:"floor",
@@ -212,10 +219,22 @@ function load(){
   n.orders=Array.isArray(x.orders)?x.orders:[];
   n.favorites=Array.isArray(x.favorites)?x.favorites:[];
   n.priceOverrides=x.priceOverrides&&typeof x.priceOverrides==="object"?x.priceOverrides:{};
+  if(!x.schemaVersion||x.schemaVersion<19){migrateReceiptPrices(n);n.schemaVersion=19;}
   return n;
  }catch(e){return clone(def)}
 }
 function clone(o){return JSON.parse(JSON.stringify(o))}
+function migrateReceiptPrices(n){
+ Object.keys(RECEIPT_PRICE_FIXES).forEach(function(id){
+  var p=RECEIPT_PRICE_FIXES[id],o=n.priceOverrides[id];
+  if(o&&o.net===p.oldNet){o.net=p.net;if(typeof o.gross!=="number"||o.gross===p.oldGross)o.gross=p.gross}
+  n.orders.forEach(function(order){
+   if(order.menuId!==id||order.netPrice!==p.oldNet)return;
+   order.netPrice=p.net;
+   if(typeof order.grossPrice!=="number"||order.grossPrice===p.oldGross)order.grossPrice=p.gross;
+  });
+ });
+}
 function save(){localStorage.setItem(KEY,JSON.stringify(st))}
 function yen(n){return new Intl.NumberFormat("ja-JP").format(Math.round(num(n,0)))+"円"}
 function pad(n){return String(n).padStart(2,"0")}
