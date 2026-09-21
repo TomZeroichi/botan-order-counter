@@ -1,17 +1,31 @@
 {
   "name": "ぼたん セルフ会計",
   "short_name": "セルフ会計",
+  "id": "./",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f5efe4",
+  "background_color": "#151311",
   "theme_color": "#171310",
   "lang": "ja",
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon.svg?v=1.9.0",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }

@@ -24,3 +24,8 @@
 
 ## 公開URL
 https://tomzeroichi.github.io/botan-order-counter/
+
+## アイコン反映
+- 正式アイコンは「ぼたん / セルフ会計」の全文表示
+- favicon、Apple touch icon、Android PWA用192px / 512px PNGを同梱
+- Service WorkerキャッシュをV1.9へ更新し、旧キャッシュをactivate時に削除
