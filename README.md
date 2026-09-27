@@ -28,6 +28,6 @@ https://tomzeroichi.github.io/botan-order-counter/
 ## アイコン反映
 - 正式アイコンは「ぼたん / セルフ会計」の全文表示
 - favicon、Apple touch icon、Android PWA用192px / 512px PNGを同梱
-- Service WorkerキャッシュをV1.9へ更新し、旧キャッシュをactivate時に削除
+- Service WorkerキャッシュをV1.10へ更新し、旧キャッシュをactivate時に削除
 - レシート確認に基づき、極上厚切り牛タン・厚切りタン・鶏せせり・肉寿司の税別価格を補正
 - 会計内訳に商品・大人/子供飲み放題・お通し・延長・クーポン・課税対象額・消費税・税込合計を表示
